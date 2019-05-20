@@ -1,18 +1,167 @@
-<style>
-.parallax {
-  /* The image used */
-  background-image: url("img_parallax.jpg");
 
-  /* Set a specific height */
-  height: 500px; 
+html {
+  height: 100%;
+}
 
-  /* Create the parallax scrolling effect */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #FFFFFF;
+  /* color: #A3B3AE; */
+  height: 100%;
+  display: block;
+}
+
+header {
+  height: 100vh;
+  width: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  text-align: center;
+  background-color: transparent;
+}
+
+header img {
+  position: fixed;
+  top:0;
+  z-index: -1;
+  margin: 0 auto;
+}
+
+header h1 {
+  margin: 35% 0 0;
+  font-size: 10em;
+  background-color: inherit;
+  z-index: 100;
+}
+
+header h2 {
+  font-size: 4em;
+}
+
+.header-buttons {
+  margin: 85% 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.main-1, .main-2 {
+  position: relative;
+  opacity: 0.65;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
-</style>
 
-<!-- Container element -->
-<div class="parallax"></div>
+
+.main-1 {
+  opacity: 0.78;
+  background-image: url("../img/dog80.jpg");
+  height: 100%;
+}
+
+.main-1-content {
+  text-align: center;
+  padding: 25px 0;
+}
+
+/* pupster title */
+.main-1-content h1 {
+  font-family: 'Major Mono Display', monospace;
+  margin-top: 220px;
+  font-size: 6.5rem;
+  color: #505634;
+  text-shadow: 1px 1px 1px #000;
+
+  /* font-weight: 500; */
+}
+
+.main-1-content h2 {
+  color: #000000;
+  opacity: 100%;
+}
+
+/* quiz button positioning */
+.main-quiz {
+  position: absolute;
+  left: 0;
+  top: 80%;
+  text-align: center;
+  width: 100%;
+}
+
+.box-1 {
+  text-align: center;
+  background-color: #72775b;
+  padding: 20px;
+  width: 100%;
+  color: #FFFFFF;
+}
+
+.main-2 {
+  opacity: 0.8;
+  background-image: url("https://images.unsplash.com/photo-1529353908102-ffb931037b07?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1502&q=80");
+  min-height: 400px;
+}
+
+.btn {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.contact{
+  text-align: center;
+  color: #000000;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.contact h2 {
+  margin-top: 15px;
+}
+
+a {
+  color: #505634;
+}
+
+a:hover {
+  color: orange;
+  font-weight: bold;
+}
+
+/* break points for tablets/iphones */
+
+@media only screen and (min-width: 900px){
+  .main-1 {
+    margin: 0 auto;
+  }
+
+  .main-2-content {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .main-2-content {
+    width: 100%;
+  }
+  li .deleteItem {
+    margin-right: 75px;
+  }
+  .main-2-content li a {
+    margin-left: 25px;
+  }
+  .main-1 h1 {
+    font-size: 55px;
+  }
+}
+
