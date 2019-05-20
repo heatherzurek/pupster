@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using MySql.Data.MySqlClient;
 using Pupster;
 
@@ -24,7 +25,7 @@ namespace Pupster.Models
     public bool GoodAlone {get; set;}
     public bool NeedsDescription {get; set;}
 
-    public Dog (string name, string photo, string sex, string breed, string color, string size, string age, bool neuteredSpayed, bool goodWithDogs, bool goodWithCats, bool goodWithKids, bool houseTrained, bool goodAlone, bool needsDescription, int id = 0)
+    public Dog (string name, string photo, string sex, string breed, string color, string size, string age, bool neuteredSpayed, bool shots, string activity, bool goodWithDogs, bool goodWithCats, bool goodWithKids, bool houseTrained, bool goodAlone, bool needsDescription, int id = 0)
     {
       Name = name;
       Photo = photo;
@@ -44,6 +45,20 @@ namespace Pupster.Models
       NeedsDescription = needsDescription;
       Id = id;
     }
+
+    public static void ClearAll()
+   {
+     MySqlConnection conn = DB.Connection();
+     conn.Open();
+     var cmd = conn.CreateCommand() as MySqlCommand;
+     cmd.CommandText = @"DELETE FROM dogs;";
+     cmd.ExecuteNonQuery();
+     conn.Close();
+     if (conn != null)
+     {
+       conn.Dispose();
+     }
+   }
 
     public static List<Dog> GetAll()
     {
@@ -80,38 +95,38 @@ namespace Pupster.Models
     }
 
 
-    arr [rdr.GetString(3), rdr.GetString(6), rdr.GetString(7), rdr.GetString(10), rdr.GetBool(11), rdr.GetBool(12), rdr.GetBool(13), rdr.GetBool(14)];
+    // arr [rdr.GetString(3), rdr.GetString(6), rdr.GetString(7), rdr.GetString(10), rdr.GetBool(11), rdr.GetBool(12), rdr.GetBool(13), rdr.GetBool(14)];
 
-    public static Dog DogMatchScore(string sex, string size, string age, string activity_level, bool good_with_dogs, bool good_with_cats, bool good_with_kids, bool good_alone, bool house_trained)
-    {
-      MySqlConnection conn = DB.Connection();
-      conn.Open();
-      var cmd = conn.CreateCommand() as MySqlCommand;
-      cmd.CommandText = @"SELECT * FROM recipes WHERE ingredients LIKE (@searchedIngredient);";
-      cmd.Parameters.AddWithValue("@searchedIngredient", "%" + searchedIngredient + "%");
-      // MySqlDataReader rdr = cmd.ExecuteReader() as MySqlDataReader;
-      var rdr = cmd.ExecuteReader() as MySqlDataReader;
-      int recipeId = 0;
-      string recipeName = "";
-      int recipeRating = 0;
-      string recipeIngredients = "";
-      string recipeInstructions = "";
-      while(rdr.Read())
-      {
-        recipeId = rdr.GetInt32(0);
-        recipeName = rdr.GetString(1);
-        recipeRating = rdr.GetInt32(2);
-        recipeIngredients = rdr.GetString(3);
-        recipeInstructions = rdr.GetString(4);
-      }
-      Recipe newRecipe = new Recipe(recipeName, recipeRating, recipeIngredients, recipeInstructions, recipeId);
-      conn.Close();
-      if (conn != null)
-      {
-        conn.Dispose();
-      }
-      return newRecipe;
-    }
+    // public static Dog DogMatchScore(string sex, string size, string age, string activity_level, bool good_with_dogs, bool good_with_cats, bool good_with_kids, bool good_alone, bool house_trained)
+    // {
+    //   MySqlConnection conn = DB.Connection();
+    //   conn.Open();
+    //   var cmd = conn.CreateCommand() as MySqlCommand;
+    //   cmd.CommandText = @"SELECT * FROM recipes WHERE ingredients LIKE (@searchedIngredient);";
+    //   cmd.Parameters.AddWithValue("@searchedIngredient", "%" + searchedIngredient + "%");
+    //   // MySqlDataReader rdr = cmd.ExecuteReader() as MySqlDataReader;
+    //   var rdr = cmd.ExecuteReader() as MySqlDataReader;
+    //   int recipeId = 0;
+    //   string recipeName = "";
+    //   int recipeRating = 0;
+    //   string recipeIngredients = "";
+    //   string recipeInstructions = "";
+    //   while(rdr.Read())
+    //   {
+    //     recipeId = rdr.GetInt32(0);
+    //     recipeName = rdr.GetString(1);
+    //     recipeRating = rdr.GetInt32(2);
+    //     recipeIngredients = rdr.GetString(3);
+    //     recipeInstructions = rdr.GetString(4);
+    //   }
+    //   Recipe newRecipe = new Recipe(recipeName, recipeRating, recipeIngredients, recipeInstructions, recipeId);
+    //   conn.Close();
+    //   if (conn != null)
+    //   {
+    //     conn.Dispose();
+    //   }
+    //   return newRecipe;
+    // }
 
 
 
