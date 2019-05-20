@@ -1,0 +1,161 @@
+html {
+  height: 100%;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #FFFFFF;
+  color: #9ed7d8;
+  height: 100%;
+  display: block;
+}
+
+header {
+  height: 100vh;
+  width: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  text-align: center;
+  background-color: transparent;
+}
+
+header img {
+  position: fixed;
+  top:0;
+  z-index: -1;
+  margin: 0 auto;
+}
+
+header h1 {
+  margin: 35% 0 0;
+  font-size: 10em;
+  background-color: inherit;
+  z-index: 100;
+}
+
+header h2 {
+  font-size: 4em;
+}
+
+header button{
+  font-size: 4em;
+  margin: 0 20px;
+}
+
+li {
+  list-style-type: none;
+}
+
+li input {
+  margin: 10px 15px;
+}
+
+.header-buttons {
+  margin: 85% 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+
+h6 {
+  padding: 5px;
+}
+
+
+.main-1, .main-2 {
+  position: relative;
+  opacity: 0.65;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.main-1 {
+  opacity: 0.6;
+  background-image: url("https://images.unsplash.com/photo-1540604832968-f91ae4b7421f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80");
+  height: 100%;
+}
+
+.main-1-content {
+  text-align: center;
+  padding: 25px 0;
+}
+
+.main-1-content h1 {
+  margin-top: 220px;
+  font-size: 6.5rem;
+  color: #9ed7d8;
+  font-weight: 500;
+}
+
+.main-1-content h2 {
+  color: #0a1c31;
+  font-weight: 700;
+}
+
+.main-quiz {
+  position: absolute;
+  left: 0;
+  top: 80%;
+  text-align: center;
+  width: 100%;
+}
+
+.box-1 {
+  text-align: center;
+  background-color: #9ed7d8;
+  padding: 20px;
+  width: 100%;
+  color: #FFFFFF;
+}
+
+.main-2 {
+  opacity: 0.8;
+  background-image: url("");
+  min-height: 100px;
+  min-width: 100%;
+}
+
+.contact{
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.contact h2 {
+  margin-top: 15px;
+}
+
+@media only screen and (min-width: 900px){
+  .main-1 {
+    margin: 0 auto;
+  }
+
+  .main-2-content {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .main-2-content {
+    width: 100%;
+  }
+  li .deleteItem {
+    margin-right: 75px;
+  }
+  .main-2-content li a {
+    margin-left: 25px;
+  }
+  .main-1 h1 {
+    font-size: 55px;
+  }
+}
