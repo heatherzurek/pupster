@@ -45,6 +45,40 @@ namespace Pupster.Models
       Id = id;
     }
 
+    public static List<Dog> GetAll()
+    {
+      List<Dog> allDogs = new List<Dog> {};
+      MySqlConnection conn = DB.Connection();
+      conn.Open();
+      var cmd = conn.CreateCommand() as MySqlCommand;
+      cmd.CommandText = @"SELECT * FROM dogs;";
+      var rdr = cmd.ExecuteReader() as MySqlDataReader;
+      while(rdr.Read())
+      {
+        int Id = rdr.GetInt32(0);
+        string dogName = rdr.GetString(1);
+        byte dogImage = rdr.GetByte(2);
+        string dogSex = rdr.GetString(3);
+        string dogBreed = rdr.GetString(4);
+        string dogColor = rdr.GetString(5);
+        string dogSize = rdr.GetString(6);
+        string dogAge = rdr.GetString(7);
+        int neuteredSpayed = rdr.GetInt32(8);
+        int shots = rdr.GetInt32(9);
+        string dogActivity = rdr.GetString(10);
+        int goodWithDogs = rdr.GetInt32(11);
+        int goodWithCats = rdr.GetInt32(12);
+        int goodWithKids = rdr.GetInt32(13);
+        int houseTrained = rdr.GetInt32(14);
+      }
+      conn.Close();
+      if (conn != null)
+      {
+        conn.Dispose();
+      }
+      return allDogs;
+    }
+
 
     arr [rdr.GetString(3), rdr.GetString(6), rdr.GetString(7), rdr.GetString(10), rdr.GetBool(11), rdr.GetBool(12), rdr.GetBool(13), rdr.GetBool(14)];
 
@@ -79,39 +113,7 @@ namespace Pupster.Models
       return newRecipe;
     }
 
-    public static List<Dog> GetAll()
-    {
-      List<Dog> allDogs = new List<Dog> {};
-      MySqlConnection conn = DB.Connection();
-      conn.Open();
-      var cmd = conn.CreateCommand() as MySqlCommand;
-      cmd.CommandText = @"SELECT * FROM dogs;";
-      var rdr = cmd.ExecuteReader() as MySqlDataReader;
-      while(rdr.Read())
-      {
-        int Id = rdr.GetInt32(0);
-        string dogName = rdr.GetString(1);
-        byte dogImage = rdr.GetByte(2);
-        string dogSex = rdr.GetString(3);
-        string dogBreed = rdr.GetString(4);
-        string dogColor = rdr.GetString(5);
-        string dogSize = rdr.GetString(6);
-        string dogAge = rdr.GetString(7);
-        int neuteredSpayed = rdr.GetInt32(8);
-        int shots = rdr.GetInt32(9);
-        string dogActivity = rdr.GetString(10);
-        int goodWithDogs = rdr.GetInt32(11);
-        int goodWithCats = rdr.GetInt32(12);
-        int goodWithKids = rdr.GetInt32(13);
-        int houseTrained = rdr.GetInt32(14);
-      }
-      conn.Close();
-      if (conn != null)
-      {
-        conn.Dispose();
-      }
-      return allDogs;
-    }
+
 
     public static List<Dog> GetDetails()
     {
