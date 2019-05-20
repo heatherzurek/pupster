@@ -5,7 +5,7 @@ html {
 body {
   font-family: 'Roboto', sans-serif;
   background-color: #FFFFFF;
-  color: #9ed7d8;
+  /* color: #A3B3AE; */
   height: 100%;
   display: block;
 }
@@ -42,34 +42,15 @@ header h2 {
   font-size: 4em;
 }
 
-header button{
-  font-size: 4em;
-  margin: 0 20px;
-}
-
-li {
-  list-style-type: none;
-}
-
-li input {
-  margin: 10px 15px;
-}
-
 .header-buttons {
   margin: 85% 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
-
-
-h6 {
-  padding: 5px;
-}
-
 
 .main-1, .main-2 {
   position: relative;
@@ -81,7 +62,7 @@ h6 {
 }
 
 .main-1 {
-  opacity: 0.6;
+  opacity: 0.78;
   background-image: url("https://images.unsplash.com/photo-1540604832968-f91ae4b7421f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80");
   height: 100%;
 }
@@ -91,18 +72,22 @@ h6 {
   padding: 25px 0;
 }
 
+/* pupster title */
 .main-1-content h1 {
   margin-top: 220px;
   font-size: 6.5rem;
-  color: #9ed7d8;
+  color: #505634;
+  text-shadow: 2px 2px 2px #000;
+
   font-weight: 500;
 }
 
 .main-1-content h2 {
-  color: #0a1c31;
-  font-weight: 700;
+  color: #000000;
+  opacity: 100%;
 }
 
+/* quiz button positioning */
 .main-quiz {
   position: absolute;
   left: 0;
@@ -113,7 +98,7 @@ h6 {
 
 .box-1 {
   text-align: center;
-  background-color: #9ed7d8;
+  background-color: #72775b;
   padding: 20px;
   width: 100%;
   color: #FFFFFF;
@@ -121,19 +106,36 @@ h6 {
 
 .main-2 {
   opacity: 0.8;
-  background-image: url("");
-  min-height: 100px;
-  min-width: 100%;
+  background-image: url("https://images.unsplash.com/photo-1529353908102-ffb931037b07?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1502&q=80");
+  min-height: 400px;
+}
+
+.btn {
+  padding-right: 20px;
+  padding-left: 20px;
 }
 
 .contact{
   text-align: center;
-  color: #FFFFFF;
+  color: #000000;
+  margin-bottom: 30px;
+  margin-top: 30px;
 }
 
 .contact h2 {
   margin-top: 15px;
 }
+
+a {
+  color: #505634;
+}
+
+a:hover {
+  color: orange;
+  font-weight: bold;
+}
+
+/* break points for tablets/iphones */
 
 @media only screen and (min-width: 900px){
   .main-1 {
