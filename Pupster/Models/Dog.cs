@@ -47,18 +47,53 @@ namespace Pupster.Models
     }
 
     public static void ClearAll()
-   {
-     MySqlConnection conn = DB.Connection();
-     conn.Open();
-     var cmd = conn.CreateCommand() as MySqlCommand;
-     cmd.CommandText = @"DELETE FROM dogs;";
-     cmd.ExecuteNonQuery();
-     conn.Close();
-     if (conn != null)
-     {
-       conn.Dispose();
-     }
-   }
+    {
+      MySqlConnection conn = DB.Connection();
+      conn.Open();
+      var cmd = conn.CreateCommand() as MySqlCommand;
+      cmd.CommandText = @"DELETE FROM dogs;";
+      cmd.ExecuteNonQuery();
+      conn.Close();
+      if (conn != null)
+      {
+        conn.Dispose();
+      }
+    }
+
+    public override bool Equals(System.Object otherDog)
+    {
+      if (!(otherDog is Dog))
+      {
+        return false;
+      }
+      else
+      {
+        Dog newDog = (Dog) otherDog;
+        bool idEquality = this.Id.Equals(newDog.Id);
+        bool NameEquality = this.Name.Equals(newDog.Name);
+        bool PhotoEquality = this.Photo.Equals(newDog.Photo);
+        bool SexEquality = this.Sex.Equals(newDog.Sex);
+        bool BreedEquality = this.Breed.Equals(newDog.Breed);
+        bool ColorEquality = this.Color.Equals(newDog.Color);
+        bool SizeEquality = this.Size.Equals(newDog.Size);
+        bool AgeEquality = this.Age.Equals(newDog.Age);
+        bool NeuteredSpayedEquality = this.NeuteredSpayed.Equals(newDog.NeuteredSpayed);
+        bool ShotsEquality = this.Shots.Equals(newDog.Shots);
+        bool ActivityEquality = this.Activity.Equals(newDog.Activity);
+        bool GoodWithDogsEquality = this.GoodWithDogs.Equals(newDog.GoodWithDogs);
+        bool GoodWithCatsEquality = this.GoodWithCats.Equals(newDog.GoodWithCats);
+        bool GoodWithKidsEquality = this.GoodWithKids.Equals(newDog.GoodWithKids);
+        bool HouseTrainedEquality = this.HouseTrained.Equals(newDog.HouseTrained);
+        bool GoodAloneEquality = this.GoodAlone.Equals(newDog.GoodAlone);
+        bool NeedsDescriptionEquality = this.NeedsDescription.Equals(newDog.NeedsDescription);
+        return (idEquality && NameEquality && PhotoEquality && SexEquality && BreedEquality && ColorEquality && SizeEquality && AgeEquality && NeuteredSpayedEquality && ShotsEquality && ActivityEquality && GoodWithDogsEquality && GoodWithCatsEquality && GoodWithKidsEquality && HouseTrainedEquality && GoodAloneEquality && NeedsDescriptionEquality);
+      }
+    }
+
+    public override int GetHashCode()
+    {
+      return this.Id.GetHashCode();
+    }
 
     public static List<Dog> GetAll()
     {

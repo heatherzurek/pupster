@@ -25,5 +25,14 @@ namespace Pupster.Tests
 
       Assert.AreEqual(typeof(Dog), newDog.GetType());
     }
+
+    [TestMethod]
+    public void Equals_ReturnsTrueIfNamesAreTheSame_Dog()
+    {
+      Dog firstDog = new Dog("Name", "Photo", "Sex", "Breed", "Color", "Size", "Age", true, true, "Activity", true, true, true, true, true, true);
+      Dog secondDog = new Dog("Name", "Photo", "Sex", "Breed", "Color", "Size", "Age", true, true, "Activity", true, true, true, true, true, true);
+
+      Assert.AreEqual(firstDog, secondDog);
+    }
   }
 }
