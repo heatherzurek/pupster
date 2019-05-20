@@ -133,7 +133,7 @@ header h2 {
 }
 
 a {
-  color: #505634;
+  color: #000000!important;
 }
 
 a:hover {
@@ -175,4 +175,3 @@ a:hover {
     font-size: 60px;
   }
 }
-
