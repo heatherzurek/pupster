@@ -1,4 +1,3 @@
-
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -17,3 +16,4 @@ namespace Pupster.Controllers
   //        return RedirectToAction("Show", new{majorId = majorId});
   //      }
 }
+
