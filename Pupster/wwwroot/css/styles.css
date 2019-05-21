@@ -79,8 +79,9 @@ header h2 {
   font-family: 'Major Mono Display', monospace;
   margin-top: 20%;
   font-size: 6.5rem;
-  color: #505634;
+  color: #40481d;
   text-shadow: 1px 1px 1px #000;
+
 
   /* font-weight: 500; */
 }
@@ -160,13 +161,13 @@ a:hover {
   grid-auto-rows: 500px;
 }
 
-.card > img {
+/* .card > img {
   width: 100%;
-}
+} */
 
-.card {
+/* .card {
   height: 450px;
-}
+} */
 
 
 /* end grid for dogs */
