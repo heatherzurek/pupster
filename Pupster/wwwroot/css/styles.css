@@ -70,6 +70,9 @@ header h2 {
 }
 
 .main-new {
+  background-color: #72775b;
+}
+/* .main-new {
   opacity: 1;
   background-image: url("../img/dog33.jpg");
   position: relative;
@@ -78,7 +81,7 @@ header h2 {
   background-repeat: no-repeat;
   background-size: cover;
   height: 100%;
-}
+} */
 
 
 .main-1-content {
@@ -118,7 +121,6 @@ header h2 {
   padding: 20px;
   width: 100%;
   color: #FFFFFF;
-  min-height: 1000px;
 }
 
 .new-1 {
@@ -148,14 +150,14 @@ header h2 {
 
 }
 
-.contact{
+footer {
   text-align: center;
-  color: #000000;
+  color: orange;
   margin-bottom: 30px;
   margin-top: 30px;
 }
 
-.contact h2 {
+footer h2 {
   margin-top: 15px;
 }
 
