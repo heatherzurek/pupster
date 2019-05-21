@@ -1,103 +1,41 @@
 @{
   Layout = "_Layout";
 }
-
-
-<form action="/adopter/@Model["adopter"].Id/quiz" method="post">
-  <h4>Ideal Age:</h4>
-  <form name="question1">
-    <input type="radio" name="button_1" value="1" checked> Puppy<br>
-    <input type="radio" name="button_2" value="2"> Young<br>
-    <input type="radio" name="button_3" value="3" checked> Adult<br>
-    <input type="radio" name="button_4" value="4"> Senior<br>
-    <input type="radio" name="button_5" value="5"> No Preference
-  </form>
-
-  <h4>What gender are you looking for?:</h4>
-  <form name="question2">
-    <input type="radio" name="button_1" value="1" checked> Male<br>
-    <input type="radio" name="button_2" value="2"> Female<br>
-    <input type="radio" name="button_3" value="3"> No preference
-  </form>
-
-  <h4>Ideal Weight:</h4>
-  <form name="question3">
-    <input type="radio" name="button_1" value="1" checked> >15 lbs<br>
-    <input type="radio" name="button_2" value="2"> 15-30 lbs<br>
-    <input type="radio" name="button_3" value="3" checked> 30-60 lbs<br>
-    <input type="radio" name="button_4" value="4"> 60+ lbs<br>
-    <input type="radio" name="button_5" value="5"> No Preference
-  </form>
-
-  <h4>Where do you live?:</h4>
-  <form name="question4">
-    <input type="radio" name="button_1" value="1" checked> House<br>
-    <input type="radio" name="button_2" value="2"> Apartment<br>
-  </form>
-
-  <h4>Where will they play?:</h4>
-  <form name="question5">
-    <input type="radio" name="button_1" value="1" checked> Walks<br>
-    <input type="radio" name="button_2" value="2"> Fenced Yard<br>
-  </form>
-
-  <h4>What's your activity level?:</h4>
-  <form name="question6">
-    <input type="radio" name="button_1" value="high" checked> Very Active<br>
-    <input type="radio" name="button_2" value="medium"> Average<br>
-    <input type="radio" name="button_3" value="low"> Homebody<br>
-  </form>
-
-  <h4>Will there be kids in the home?:</h4>
-  <form name="question7">
-    <input type="radio" name="button_1" value="1" checked> Yes<br>
-    <input type="radio" name="button_2" value="2"> No<br>
-  </form>
-
-  <h4>Have you had a dog before?:</h4>
-  <form name="question8">
-    <input type="radio" name="button_1" value="1" checked> Yes<br>
-    <input type="radio" name="button_2" value="2"> No<br>
-  </form>
-
-  <h4>Other pets in the household?:</h4>
-  <form name="question9">
-    <input type="radio" name="button_1" value="1" checked> Dogs<br>
-    <input type="radio" name="button_2" value="2"> Cats<br>
-    <input type="radio" name="button_3" value="3"> Dogs and Cats<br>
-    <input type="radio" name="button_4" value="4"> No
-  </form>
-
-
-  <h4>How much time do you spend at home?:</h4>
-  <form name="question10">
-    <input type="radio" name="button_1" value="1" checked> I Work From Home<br>
-    <input type="radio" name="button_2" value="2"> Gone for 7-8 Hours a Day<br>
-  </form>
-  <button type="submit" name="button">Submit</button>
-</form>
-
-
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
+  <link href="css/styles.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display&display=swap" rel="stylesheet">
+  <title>Pupster</title>
+</head>
 <body>
-  @using (Html.BeginForm("Index", "Adopter", FormMethod.Post))
-  {
-    @Html.RadioButton("age", "puppy")
-    @Html.RadioButton("age", "young")
-    @Html.RadioButton("age", "adult")
-    @Html.RadioButton("age", "senior")
-    @Html.RadioButton("age", "no preference")
 
+  <div class="main-1">
+    <div class="main-1-content">
+      <h1>PuPsteR</h1>
+      <h2>Find your perfect match</h2>
+    </div>
+    <!-- <div class="main-quiz">
+      <button id="/" type="button" name="button" class="btn btn-dark ">Start Quiz</button>
+    </div> -->
+  </div>
 
-    @Html.RadioButton("gender", "male")
-    @Html.RadioButton("gender", "female")
-    @Html.RadioButton("gender", "no preference")
+  <div class="box-1">
+    <h1>Start Quiz</h1>
+    <hr>
+    <h3>form here</h3>
+  </div>
 
-    @Html.RadioButton("weight", "male")
-    @Html.RadioButton("weight", "female")
+  <div class="main-2">
+  </div>
+  <div class="contact">
+    <h1>Contact</h1>
+    <hr>
+    <a href="mailto:heather.zurek@gmail.com">Email</a> | <a href="#">Facebook</a> | <a href="#">Instagram</a> <br>
+  </div>
 
-    @Html.RadioButton("age", "male")
-    @Html.RadioButton("age", "female")
-
-    <input type="submit" value="Save" />
-  }
 </body>
+</html>
