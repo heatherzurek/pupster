@@ -236,7 +236,7 @@ namespace Pupster.Models
       MySqlConnection conn = DB.Connection();
       conn.Open();
       var cmd = conn.CreateCommand() as MySqlCommand;
-      cmd.CommandText = @"INSERT INTO dogs (name, photo, sex, breed, color, size, age, neutered_spayed, shots, activity, good_with_dogs, good_with_cats, good_with_kids, house_trained, good_alone, needs_description) VALUES (@name, @photo, @sex, @breed, @color, @size, @age, @neuteredSpayed, @shots, @activity, @goodWithDogs, @goodWithCats, @goodWithKids, @houseTrained, @goodAlone, @needsDescription);";
+      cmd.CommandText = @"INSERT INTO dogs (name, photo, sex, breed, color, size, age, neutered_spayed, shots_up_to_date, activity_level, good_with_dogs, good_with_cats, good_with_kids, house_trained, good_alone, needs_description) VALUES (@name, @photo, @sex, @breed, @color, @size, @age, @neuteredSpayed, @shots, @activity, @goodWithDogs, @goodWithCats, @goodWithKids, @houseTrained, @goodAlone, @needsDescription);";
       cmd.Parameters.AddWithValue("@name", Name);
       cmd.Parameters.AddWithValue("@photo", Photo);
       cmd.Parameters.AddWithValue("@sex", Sex);

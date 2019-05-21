@@ -2,83 +2,114 @@
   Layout = "_Layout";
 }
 
-<h2>Add a dog</h2>
-
-<div class="main-1">
-<form action="/dog" method="post">
-  <input id="dogId" name="dogId" type="hidden">
-  <label for="name">DOG NAME</label>
-  <input id="name" name="name" type="text">
-  <br>
-  <label for="photo">Photo URL</label>
-  <input id="photo" name="photo" type="text">
-  <br>
-  <label for="sex">Sex</label>
-  <input id="sex" name="sex" type="text">
-  <br>
-  <label for="breed">Breed</label>
-  <input id="breed" name="breed" type="text">
-  <br>
-  <label for="color">Color</label>
-  <input id="color" name="color" type="text">
-  <br>
-  <label for="size">Size</label>
-  <input id="size" name="size" type="text">
-  <br>
-  <label for="age">Age</label>
-  <input id="age" name="age" type="text">
-  <br>
-  <label for="neuteredSpayed">Neutered or Spayed?</label>
-  <select name="neuteredSpayed">
-    <option value="true">Yes</option>
-    <option value="false">No</option>
-  </select>
-  <br>
-  <label for="shots">Is it up to date with shots?</label>
-  <select name="shots">
-    <option value="true">Yes</option>
-    <option value="false">No</option>
-  </select>
-  <br>
-  <label for="dogActivity">What is the activity level? (low/medium/high)</label>
-  <input id="dogActivity" name="dogActivity" type="text">
-  <br>
-  <label for="goodWithDogs">Is it good with other dogs?</label>
-  <select name="goodWithDogs">
-    <option value="true">Yes</option>
-    <option value="false">No</option>
-  </select>
-  <br>
-  <label for="goodWithCats">Is it good with cats?</label>
-  <select name="goodWithCats">
-    <option value="true">Yes</option>
-    <option value="false">No</option>
-  </select>
-  <br>
-  <label for="goodWithKids">Is it good with kids?</label>
-  <select name="goodWithKids">
-    <option value="true">Yes</option>
-    <option value="false">No</option>
-  </select>
-  <br>
-  <label for="houseTrained">Is it house trained?</label>
-  <select name="houseTrained">
-    <option value="true">Yes</option>
-    <option value="false">No</option>
-  </select>
-  <br>
-  <label for="goodAlone">Can it stay home alone?</label>
-  <select name="goodAlone">
-    <option value="true">Yes</option>
-    <option value="false">No</option>
-  </select>
-  <br>
-  <label for="needsDescription">Any additional needs?</label>
-  <input id="needsDescription" name="needsDescription" type="text">
-  <br>
-  <button type="submit">ADD</button>
-</form>
-<br>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
+  <link href="~/css/styles.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display&display=swap" rel="stylesheet">
+  <title>Pupster</title>
+</head>
+<div class="main-new">
+  <div class="main-1-content">
+    <div class="new-1">
+      <div class="formText">
+    <h2>Add a dog</h2>
+    <form action="/dogs" method="post">
+      @* <input id="dogId" name="dogId" type="hidden"> *@
+      <label for="name">DOG NAME</label>
+      <input id="name" name="name" type="text">
+      <br>
+      <br>
+      <label for="photo">Photo URL</label>
+      <input id="photo" name="photo" type="text">
+      <br>
+      <br>
+      <label for="sex">Sex</label>
+      <input id="sex" name="sex" type="text">
+      <br>
+      <br>
+      <label for="breed">Breed</label>
+      <input id="breed" name="breed" type="text">
+      <br>
+      <br>
+      <label for="color">Color</label>
+      <input id="color" name="color" type="text">
+      <br>
+      <br>
+      <label for="size">Size</label>
+      <input id="size" name="size" type="text">
+      <br>
+      <br>
+      <label for="age">Age</label>
+      <input id="age" name="age" type="text">
+      <br>
+      <br>
+      <label for="neuteredSpayed">Neutered or Spayed?</label>
+      <select name="neuteredSpayed">
+        <option value="true">Yes</option>
+        <option value="false">No</option>
+      </select>
+      <br>
+      <br>
+      <label for="shots">Is it up to date with shots?</label>
+      <select name="shots">
+        <option value="true">Yes</option>
+        <option value="false">No</option>
+      </select>
+      <br>
+      <br>
+      <label for="activity">What is the activity level? (low/medium/high)</label>
+      <input id="activity" name="activity" type="text">
+      <br>
+      <br>
+      <label for="goodWithDogs">Is it good with other dogs?</label>
+      <select name="goodWithDogs">
+        <option value="true">Yes</option>
+        <option value="false">No</option>
+      </select>
+      <br>
+      <br>
+      <label for="goodWithCats">Is it good with cats?</label>
+      <select name="goodWithCats">
+        <option value="true">Yes</option>
+        <option value="false">No</option>
+      </select>
+      <br>
+      <br>
+      <label for="goodWithKids">Is it good with kids?</label>
+      <select name="goodWithKids">
+        <option value="true">Yes</option>
+        <option value="false">No</option>
+      </select>
+      <br>
+      <br>
+      <label for="houseTrained">Is it house trained?</label>
+      <select name="houseTrained">
+        <option value="true">Yes</option>
+        <option value="false">No</option>
+      </select>
+      <br>
+      <br>
+      <label for="goodAlone">Can it stay home alone?</label>
+      <select name="goodAlone">
+        <option value="true">Yes</option>
+        <option value="false">No</option>
+      </select>
+      <br>
+      <br>
+      <label for="needsDescription">Any additional needs?</label>
+      <input id="needsDescription" name="needsDescription" type="text">
+      <br>
+      <br>
+      <button type="submit">ADD</button>
+    </form>
+    <br>
+    <br>
+  </div>
+  </div>
+  </div>
 </div>
 <p><a href="/">BACK HOME</a></p>
 <p><a href="/dogs">BACK TO DOGS</a></p>

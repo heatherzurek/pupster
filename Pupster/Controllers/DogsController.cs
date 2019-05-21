@@ -28,24 +28,7 @@ namespace Pupster.Controllers
       Dog newDog = new Dog(name, photo, sex, breed, color, size, age, neuteredSpayed, shots, activity, goodWithDogs, goodWithCats, goodWithKids, houseTrained, goodAlone, needsDescription);
       newDog.Save();
       List<Dog> allDogs = Dog.GetAll();
-        // int Id = id;
-        // string Name = name;
-        // string Photo = photo;
-        // string Sex = sex;
-        // string Breed = breed;
-        // string Color = color;
-        // string Size = size;
-        // string Age = age;
-        // bool NeuteredSpayed = neuteredSpayed;
-        // bool Shots = shots;
-        // string Activity = activity;
-        // bool GoodWithDogs = goodWithDogs;
-        // bool GoodWithCats = goodWithCats;
-        // bool GoodWithKids = goodWithKids;
-        // bool HouseTrained = houseTrained;
-        // bool GoodAlone = goodAlone;
-        // bool NeedsDescription = needsDescription;
-      return View("Index", allDogs);
+      return RedirectToAction("Index");
     }
 
 
