@@ -6,14 +6,13 @@ using Pupster.Models;
 
 namespace Pupster.Controllers
 {
-  public class DogController : Controller
+  public class DogsController : Controller
   {
 
     [HttpGet("/dogs")]
     public ActionResult Index()
     {
-      List<Dog> allDogs = Dog.GetAll();
-      return View(allDogs);
+      return View();
     }
 
     [HttpGet("/dogs/new")]
