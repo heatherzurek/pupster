@@ -24,9 +24,9 @@ namespace Pupster.Models
     public bool GoodWithKids {get; set;}
     public bool HouseTrained {get; set;}
     public bool GoodAlone {get; set;}
-    public bool NeedsDescription {get; set;}
+    public string NeedsDescription {get; set;}
 
-    public Dog (string name, string photo, string sex, string breed, string color, string size, string age, bool neuteredSpayed, bool shots, string activity, bool goodWithDogs, bool goodWithCats, bool goodWithKids, bool houseTrained, bool goodAlone, bool needsDescription, int id = 0)
+    public Dog (string name, string photo, string sex, string breed, string color, string size, string age, bool neuteredSpayed, bool shots, string activity, bool goodWithDogs, bool goodWithCats, bool goodWithKids, bool houseTrained, bool goodAlone, string needsDescription, int id = 0)
     {
       Name = name;
       Photo = photo;
@@ -47,19 +47,19 @@ namespace Pupster.Models
       Id = id;
     }
 
-    public static void ClearAll()
-    {
-      MySqlConnection conn = DB.Connection();
-      conn.Open();
-      var cmd = conn.CreateCommand() as MySqlCommand;
-      cmd.CommandText = @"DELETE FROM dogs;";
-      cmd.ExecuteNonQuery();
-      conn.Close();
-      if (conn != null)
-      {
-        conn.Dispose();
-      }
-    }
+    // public static void ClearAll()
+    // {
+    //   MySqlConnection conn = DB.Connection();
+    //   conn.Open();
+    //   var cmd = conn.CreateCommand() as MySqlCommand;
+    //   cmd.CommandText = @"DELETE FROM dogs;";
+    //   cmd.ExecuteNonQuery();
+    //   conn.Close();
+    //   if (conn != null)
+    //   {
+    //     conn.Dispose();
+    //   }
+    // }
 
     public override bool Equals(System.Object otherDog)
     {
@@ -96,6 +96,7 @@ namespace Pupster.Models
       return this.Id.GetHashCode();
     }
 
+
     public static List<Dog> GetAll()
     {
       List<Dog> allDogs = new List<Dog> {};
@@ -106,21 +107,25 @@ namespace Pupster.Models
       var rdr = cmd.ExecuteReader() as MySqlDataReader;
       while(rdr.Read())
       {
-        int Id = rdr.GetInt32(0);
+        int id = rdr.GetInt32(0);
         string dogName = rdr.GetString(1);
-        byte dogImage = rdr.GetByte(2);
-        string dogSex = rdr.GetString(3);
-        string dogBreed = rdr.GetString(4);
-        string dogColor = rdr.GetString(5);
-        string dogSize = rdr.GetString(6);
-        string dogAge = rdr.GetString(7);
-        int neuteredSpayed = rdr.GetInt32(8);
-        int shots = rdr.GetInt32(9);
-        string dogActivity = rdr.GetString(10);
-        int goodWithDogs = rdr.GetInt32(11);
-        int goodWithCats = rdr.GetInt32(12);
-        int goodWithKids = rdr.GetInt32(13);
-        int houseTrained = rdr.GetInt32(14);
+        string dogImage = rdr.GetString(2);
+        string sex = rdr.GetString(3);
+        string breed = rdr.GetString(4);
+        string color = rdr.GetString(5);
+        string size = rdr.GetString(6);
+        string age = rdr.GetString(7);
+        bool neuteredSpayed = rdr.GetBoolean(8);
+        bool shots = rdr.GetBoolean(9);
+        string activity = rdr.GetString(10);
+        bool goodWithDogs = rdr.GetBoolean(11);
+        bool goodWithCats = rdr.GetBoolean(12);
+        bool goodWithKids = rdr.GetBoolean(13);
+        bool houseTrained = rdr.GetBoolean(14);
+        bool goodAlone = rdr.GetBoolean(15);
+        string needsDescription = rdr.GetString(16);
+        Dog newDog = new Dog(dogName, dogImage, sex, breed, color, size, age, neuteredSpayed, shots, activity, goodWithDogs, goodWithCats, goodWithKids, houseTrained, goodAlone, needsDescription, id);
+
       }
       conn.Close();
       if (conn != null)
@@ -165,37 +170,143 @@ namespace Pupster.Models
     // }
 
 
-
-    public static List<Dog> GetDetails()
+    public static Dog Find(int id)
     {
-      List<Dog> allDogs = new List<Dog> {};
       MySqlConnection conn = DB.Connection();
       conn.Open();
       var cmd = conn.CreateCommand() as MySqlCommand;
-      cmd.CommandText = @"SELECT * FROM dogs;";
+      cmd.CommandText = @"SELECT * FROM dogs WHERE id = (@searchId);";
+      MySqlParameter searchId = new MySqlParameter();
+      searchId.ParameterName = "@searchId";
+      searchId.Value = id;
+      cmd.Parameters.Add(searchId);
+      // cmd.Parameters.AddWithValue("@searchId", searchId);
       var rdr = cmd.ExecuteReader() as MySqlDataReader;
+      int dogId = 0;
+      string dogName = "";
+      string dogPhoto = "";
+      string dogSex = "";
+      string dogBreed = "";
+      string dogColor = "";
+      string dogSize = "";
+      string dogAge = "";
+      bool neuteredSpayed = false;
+      bool shots = false;
+      string dogActivity = "";
+      bool goodWithDogs = false;
+      bool goodWithCats = false;
+      bool goodWithKids = false;
+      bool houseTrained = false;
+      bool goodAlone = false;
+      string needsDescription = "";
       while(rdr.Read())
       {
-        int Id = rdr.GetInt32(0);
-        string dogSex = rdr.GetString(3);
-        string dogSize = rdr.GetString(6);
-        string dogAge = rdr.GetString(7);
-        string dogActivity = rdr.GetString(10);
-        int goodWithDogs = rdr.GetInt32(11);
-        int goodWithCats = rdr.GetInt32(12);
-        int goodWithKids = rdr.GetInt32(13);
-        int houseTrained = rdr.GetInt32(14);
-        int goodAlone = rdr.GetInt32(15);
-        int needsDescription = rdr.GetInt32(16);
+        dogId = rdr.GetInt32(0);
+        dogName = rdr.GetString(1);
+        dogPhoto = rdr.GetString(2);
+        dogSex = rdr.GetString(3);
+        dogBreed = rdr.GetString(4);
+        dogColor = rdr.GetString(5);
+        dogSize = rdr.GetString(6);
+        dogAge = rdr.GetString(7);
+        neuteredSpayed = rdr.GetBoolean(8);
+        shots = rdr.GetBoolean(9);
+        dogActivity = rdr.GetString(10);
+        goodWithDogs = rdr.GetBoolean(11);
+        goodWithCats = rdr.GetBoolean(12);
+        goodWithKids = rdr.GetBoolean(13);
+        houseTrained = rdr.GetBoolean(14);
+        goodAlone = rdr.GetBoolean(15);
+        needsDescription = rdr.GetString(16);
       }
+
+      Dog foundDog = new Dog(dogName, dogPhoto, dogSex, dogBreed, dogColor, dogSize, dogAge, neuteredSpayed, shots, dogActivity, goodWithDogs, goodWithCats, goodWithKids, houseTrained, goodAlone, needsDescription, dogId);
       conn.Close();
       if (conn != null)
       {
         conn.Dispose();
       }
-      return allDogs;
+      return foundDog;
     }
 
+
+
+    public void Save()
+    {
+      MySqlConnection conn = DB.Connection();
+      conn.Open();
+      var cmd = conn.CreateCommand() as MySqlCommand;
+      cmd.CommandText = @"INSERT INTO dogs (name, photo, sex, breed, color, size, age, neutered_spayed, shots, activity, good_with_dogs, good_with_cats, good_with_kids, house_trained, good_alone, needs_description) VALUES (@name, @photo, @sex, @breed, @color, @size, @age, @neuteredSpayed, @shots, @activity, @goodWithDogs, @goodWithCats, @goodWithKids, @houseTrained, @goodAlone, @needsDescription);";
+      cmd.Parameters.AddWithValue("@name", Name);
+      cmd.Parameters.AddWithValue("@photo", Photo);
+      cmd.Parameters.AddWithValue("@sex", Sex);
+      cmd.Parameters.AddWithValue("@breed", Breed);
+      cmd.Parameters.AddWithValue("@color", Color);
+      cmd.Parameters.AddWithValue("@size", Size);
+      cmd.Parameters.AddWithValue("@age", Age);
+      cmd.Parameters.AddWithValue("@neuteredSpayed", NeuteredSpayed);
+      cmd.Parameters.AddWithValue("@shots", Shots);
+      cmd.Parameters.AddWithValue("@activity", Activity);
+      cmd.Parameters.AddWithValue("@goodWithDogs", GoodWithDogs);
+      cmd.Parameters.AddWithValue("@goodWithCats", GoodWithCats);
+      cmd.Parameters.AddWithValue("@goodWithKids", GoodWithKids);
+      cmd.Parameters.AddWithValue("@houseTrained", HouseTrained);
+      cmd.Parameters.AddWithValue("@goodAlone", GoodAlone);
+      cmd.Parameters.AddWithValue("@needsDescription", NeedsDescription);
+      cmd.ExecuteNonQuery();
+      Id = (int) cmd.LastInsertedId;
+      conn.Close();
+      if (conn != null)
+      {
+        conn.Dispose();
+      }
+    }
+
+    public void DeleteDog(int id)
+    {
+      MySqlConnection conn = DB.Connection();
+      conn.Open();
+      var cmd = conn.CreateCommand() as MySqlCommand;
+      cmd.CommandText = @"DELETE FROM dogs WHERE id = @thisId;";
+      cmd.Parameters.AddWithValue("@thisId", Id);
+      cmd.ExecuteNonQuery();
+      conn.Close();
+      if (conn != null)
+      {
+        conn.Dispose();
+      }
+    }
+
+    public void Edit(string name, string photo, string sex, string breed, string color, string size, string age, bool neuteredSpayed, bool shots, string activity, bool goodWithDogs, bool goodWithCats, bool goodWithKids, bool houseTrained, bool goodAlone, string needsDescription, int id)
+    {
+      MySqlConnection conn = DB.Connection();
+      conn.Open();
+      var cmd = conn.CreateCommand() as MySqlCommand;
+      cmd.CommandText = @"UPDATE dogs SET (name = @name, photo = @photo, sex = @sex, breed = @breed, color = @color, size = @size, age = @age, neuteredSpayed = @neuteredSpayed, shots = @shots, activity = @activity, goodWithDogs = @goodWithDogs, goodWithCats = @goodWithCats, goodWithKids = @goodWithKids, houseTrained = @houseTrained, goodAlone = @goodAlone, needsDescription = @needsDescription) WHERE id = @searchId);";
+      cmd.Parameters.AddWithValue("@searchId", id);
+      cmd.Parameters.AddWithValue("@name", name);
+      cmd.Parameters.AddWithValue("@photo", photo);
+      cmd.Parameters.AddWithValue("@sex", sex);
+      cmd.Parameters.AddWithValue("@breed", breed);
+      cmd.Parameters.AddWithValue("@color", color);
+      cmd.Parameters.AddWithValue("@size", size);
+      cmd.Parameters.AddWithValue("@age", age);
+      cmd.Parameters.AddWithValue("@neuteredSpayed", neuteredSpayed);
+      cmd.Parameters.AddWithValue("@shots", shots);
+      cmd.Parameters.AddWithValue("@activity", activity);
+      cmd.Parameters.AddWithValue("@goodWithDogs", goodWithDogs);
+      cmd.Parameters.AddWithValue("@goodWithCats", goodWithCats);
+      cmd.Parameters.AddWithValue("@goodWithKids", goodWithKids);
+      cmd.Parameters.AddWithValue("@houseTrained", houseTrained);
+      cmd.Parameters.AddWithValue("@goodAlone", goodAlone);
+      cmd.Parameters.AddWithValue("@needsDescription", needsDescription);
+      cmd.ExecuteNonQuery();
+      conn.Close();
+      if (conn != null)
+      {
+        conn.Dispose();
+      }
+    }
 
 
   }
