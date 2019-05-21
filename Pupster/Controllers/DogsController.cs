@@ -14,8 +14,8 @@ namespace Pupster.Controllers
     {
       List<Dog> allDogs = Dog.GetAll();
       return View(allDogs);
-    }
 
+    }
 
     [HttpGet("/dogs/new")]
     public ActionResult New()
@@ -29,8 +29,11 @@ namespace Pupster.Controllers
       Dog newDog = new Dog(name, photo, sex, breed, color, size, age, neuteredSpayed, shots, activity, goodWithDogs, goodWithCats, goodWithKids, houseTrained, goodAlone, needsDescription);
       newDog.Save();
       List<Dog> allDogs = Dog.GetAll();
+      
       return RedirectToAction("Index");
     }
+
+
 
 
     [HttpGet("/dogs/{id}")]
