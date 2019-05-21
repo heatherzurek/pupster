@@ -121,6 +121,15 @@ header h2 {
   min-height: 1000px;
 }
 
+.box-show {
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.75);
+  padding: 20px;
+  width: 100%;
+  color: #494C3A;
+  min-height: 1000px;
+}
+
 .new-1 {
   text-align: center;
   background-color: rgba(255, 255, 255, 0.75);
@@ -225,4 +234,61 @@ a:hover {
   .main-1 h1 {
     font-size: 60px;
   }
+}
+
+.showGrid
+{
+  display: grid;
+  gap: 1%;
+  grid-template-columns: repeat(5, 1fr);
+  justify-content: center;
+  grid-auto-rows: 30vh;
+}
+
+.column1
+{
+  grid-column: 2/3;
+}
+
+.column2
+{
+  grid-column: 3/5;
+  overflow: scroll;
+}
+
+.bools1
+{
+  margin-top: 10%;
+  grid-row: 2/3;
+  grid-column: 2/3;
+}
+
+.bools2
+{
+  margin-top: 10%;
+  grid-row: 2/3;
+  grid-column: 3/4;
+}
+
+.bools3
+{
+  margin-top: 10%;
+  grid-row: 2/3;
+  grid-column: 4/5;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
