@@ -1,3 +1,4 @@
+@using Pupster.Models;
 @{
   Layout = "_Layout";
 }
@@ -7,7 +8,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
-  <link href="css/styles.css" rel="stylesheet" type="text/css">
+  <link href="~/css/styles.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display&display=swap" rel="stylesheet">
   <title>Pupster</title>
 </head>
@@ -20,17 +21,20 @@
     </div>
     <div class="main-quiz">
 
-      <form action="/dogs" method="get">
-        <button type="submit" name="button" class="btn btn-dark">View All Dogs</button>
-      </form>
 
     </div>
   </div>
 
   <div class="box-1">
-    <h1>About Pupster</h1>
+    <h1>Resources</h1>
     <hr>
-    <p>Pupster is a searchable database and resource that helps match rescue dogs to adopters. Pupster allows its users to find their perfect match, browse adoptable dogs and rescues to be able to find adopters and foster homes for dogs in need.</p>
+    <a href="https://theshelterpetproject.org/why-adopt/">About Pet Adoption</a>
+    <br>
+    <a href="https://www.petpoisonhelpline.com/poisons/">Pet Poison Hotline</a>
+    <br>
+    <a href="https://www.petpoisonhelpline.com/blog/introducing-new-dog-home-resident-dogs/">Introducing a new dog</a>
+    <br>
+    <a href="https://www.humanesociety.org/resources/top-reasons-adopt-pet">Why Adopt</a>
 
   </div>
 

@@ -14,11 +14,12 @@
 <div class="main-new">
   <div class="main-1-content">
     <div class="new-1">
+      <p>For shelter and rescue use only.</p>
       <div class="formText">
     <h2>Add a dog</h2>
     <form action="/dogs" method="post">
-      @* <input id="dogId" name="dogId" type="hidden"> *@
-      <label for="name">DOG NAME</label>
+      <input id="dogId" name="dogId" type="hidden">
+      <label for="name">Dog Name</label>
       <input id="name" name="name" type="text">
       <br>
       <br>
@@ -103,7 +104,7 @@
       <input id="needsDescription" name="needsDescription" type="text">
       <br>
       <br>
-      <button type="submit">ADD</button>
+      <button type="submit" class="btn btn-dark">ADD</button>
     </form>
     <br>
     <br>
@@ -111,5 +112,3 @@
   </div>
   </div>
 </div>
-<p><a href="/">BACK HOME</a></p>
-<p><a href="/dogs">BACK TO DOGS</a></p>
