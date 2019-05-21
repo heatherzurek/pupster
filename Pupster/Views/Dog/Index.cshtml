@@ -1,23 +1,46 @@
 @{
   Layout = "_Layout";
 }
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
+  <link href="css/styles.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display&display=swap" rel="stylesheet">
+  <title>Pupster</title>
+</head>
+<body>
 
-<h1>//ADOPTABLE DOGS//</h1>
+  <div class="main-1">
+    <div class="main-1-content">
+      <h1>PuPsteR</h1>
+      <h2>Find your perfect match</h2>
+    </div>
+    <div class="main-quiz">
+      <button id="/dogs" type="button" name="button" class="btn btn-dark ">View All Dogs</button>
+    </div>
+  </div>
 
-@if (@Model.Count == 0)
-{
-  <h3>NO DOGS HAVE BEEN ADDED YET!</h3>
-}
+  <div class="box-1">
+    <h1>View Dogs</h1>
+    <a href="/dogs/new">ADD A DOG</a>
+    <hr>
+    <p>Pupster is a shelter dog companion matching quiz to help you find your perfect shelter dog match based on a personality quiz, similar to a dating website!</p>
 
-@foreach (var dog in Model)
-{
-  <h3><a href='/dogs/@dog.Id'>@dog.Name</a></h3>
-}
+    <form action="/dogs/delete-all-dogs" method="post">
+    <button type="submit" name="button">DELETE ALL DOGS</button>
+    </form>
+  </div>
 
-<a href="/dogs/new">ADD A DOG</a>
+  <div class="main-2">
+  </div>
+  <div class="contact">
+    <h1>Contact</h1>
+    <hr>
+    <a href="mailto:heather.zurek@gmail.com">Email</a> | <a href="#">Facebook</a> | <a href="#">Instagram</a> <br>
+  </div>
 
-<p><a href='/'>BACK HOME</a></p>
-
-@* <form action="/dogs/delete-all-dogs" method="post">
-<button type="submit" name="button">DELETE ALL STYLISTS</button>
-</form> *@
+</body>
+</html>
