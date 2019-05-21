@@ -12,7 +12,8 @@ namespace Pupster.Controllers
     [HttpGet("/dogs")]
     public ActionResult Index()
     {
-      return View();
+      List<Dog> allDogs = Dog.GetAll();
+      return View(allDogs);
     }
 
 
