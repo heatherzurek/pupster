@@ -15,6 +15,7 @@ namespace Pupster.Controllers
       return View();
     }
 
+
     [HttpGet("/dogs/new")]
     public ActionResult New()
     {
@@ -79,11 +80,6 @@ namespace Pupster.Controllers
     //   Dog.ClearAll();
     //   return RedirectToAction("Index", "Home");
     // }
-
-
-
-
-
 
   }
 }

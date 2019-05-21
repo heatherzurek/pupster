@@ -7,42 +7,49 @@
 // {
 //   public class Adopter
 //   {
-//     public int Id {get; set;}
+//     private string _name;
+//     private int _id;
 //
-//     // arr [rdr.GetString(3), rdr.GetString(6), rdr.GetString(7), rdr.GetString(10), rdr.GetBool(11), rdr.GetBool(12), rdr.GetBool(13), rdr.GetBool(14)];
+//     public Adopter(string name, int id = 0 )
+//     {
+//       _name = name;
+//       _id = id;
+//     }
 //
-//     // public static Dog DogMatchScore(string sex, string size, string age, string activity_level, bool good_with_dogs, bool good_with_cats, bool good_with_kids, bool good_alone, bool house_trained)
-//     // {
-//     //   MySqlConnection conn = DB.Connection();
-//     //   conn.Open();
-//     //   var cmd = conn.CreateCommand() as MySqlCommand;
-//     //   cmd.CommandText = @"SELECT * FROM recipes WHERE ingredients LIKE (@searchedIngredient);";
-//     //   cmd.Parameters.AddWithValue("@searchedIngredient", "%" + searchedIngredient + "%");
-//     //   // MySqlDataReader rdr = cmd.ExecuteReader() as MySqlDataReader;
-//     //   var rdr = cmd.ExecuteReader() as MySqlDataReader;
-//     //   int recipeId = 0;
-//     //   string recipeName = "";
-//     //   int recipeRating = 0;
-//     //   string recipeIngredients = "";
-//     //   string recipeInstructions = "";
-//     //   while(rdr.Read())
-//     //   {
-//     //     recipeId = rdr.GetInt32(0);
-//     //     recipeName = rdr.GetString(1);
-//     //     recipeRating = rdr.GetInt32(2);
-//     //     recipeIngredients = rdr.GetString(3);
-//     //     recipeInstructions = rdr.GetString(4);
-//     //   }
-//     //   Recipe newRecipe = new Recipe(recipeName, recipeRating, recipeIngredients, recipeInstructions, recipeId);
-//     //   conn.Close();
-//     //   if (conn != null)
-//     //   {
-//     //     conn.Dispose();
-//     //   }
-//     //   return newRecipe;
-//     // }
-//     //
-//     // public static List<Dog> GetAllDogs()
+//     public string GetName()
+//     {
+//       return _name;
+//     }
+//
+//     public int GetId()
+//     {
+//       return _id;
+//     }
+//
+//     public static List<Adopter> GetAll()
+//       {
+//         List<Adopter> allAdopters = new List<Adopter> {};
+//         MySqlConnection conn = DB.Connection();
+//         conn.Open();
+//         var cmd = conn.CreateCommand() as MySqlCommand;
+//         cmd.CommandText = @"SELECT * FROM adopters;";
+//         var rdr = cmd.ExecuteReader() as MySqlDataReader;
+//         while(rdr.Read())
+//         {
+//           string adopterName = rdr.GetString(0);
+//           int adopterId = rdr.GetInt32(1);
+//           Adopter newAdopter = new Adopter(adopterName, adopterId);
+//           allAdopters.Add(newAdopter);
+//         }
+//         conn.Close();
+//         if (conn != null)
+//         {
+//           conn.Dispose();
+//         }
+//         return allAdopters;
+//       }
+//
+//     // public static List<Dog> GetAll()
 //     // {
 //     //   List<Dog> allDogs = new List<Dog> {};
 //     //   MySqlConnection conn = DB.Connection();
