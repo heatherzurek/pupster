@@ -105,6 +105,7 @@ header h2 {
   padding: 20px;
   width: 100%;
   color: #FFFFFF;
+  min-height: 1000px;
 }
 
 .main-2 {
@@ -148,6 +149,30 @@ a:hover {
 .bg-light {
   background-color: #FFFFFF!important;
 }
+
+/* start grid for dogs */
+
+.grid {
+  display: grid;
+  gap: 1%;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 3fr));
+  justify-content: center;
+  grid-auto-rows: 500px;
+}
+
+.card > img {
+  width: 100%;
+}
+
+.card {
+  height: 450px;
+}
+
+
+/* end grid for dogs */
+
+
+
 
 /* break points for tablets/iphones */
 
