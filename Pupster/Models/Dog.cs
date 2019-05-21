@@ -47,20 +47,6 @@ namespace Pupster.Models
       Id = id;
     }
 
-    // public static void ClearAll()
-    // {
-    //   MySqlConnection conn = DB.Connection();
-    //   conn.Open();
-    //   var cmd = conn.CreateCommand() as MySqlCommand;
-    //   cmd.CommandText = @"DELETE FROM dogs;";
-    //   cmd.ExecuteNonQuery();
-    //   conn.Close();
-    //   if (conn != null)
-    //   {
-    //     conn.Dispose();
-    //   }
-    // }
-
     public override bool Equals(System.Object otherDog)
     {
       if (!(otherDog is Dog))
@@ -135,41 +121,6 @@ namespace Pupster.Models
       return allDogs;
     }
 
-
-    // arr [rdr.GetString(3), rdr.GetString(6), rdr.GetString(7), rdr.GetString(10), rdr.GetBool(11), rdr.GetBool(12), rdr.GetBool(13), rdr.GetBool(14)];
-
-    // public static Dog DogMatchScore(string sex, string size, string age, string activity_level, bool good_with_dogs, bool good_with_cats, bool good_with_kids, bool good_alone, bool house_trained)
-    // {
-    //   MySqlConnection conn = DB.Connection();
-    //   conn.Open();
-    //   var cmd = conn.CreateCommand() as MySqlCommand;
-    //   cmd.CommandText = @"SELECT * FROM recipes WHERE ingredients LIKE (@searchedIngredient);";
-    //   cmd.Parameters.AddWithValue("@searchedIngredient", "%" + searchedIngredient + "%");
-    //   // MySqlDataReader rdr = cmd.ExecuteReader() as MySqlDataReader;
-    //   var rdr = cmd.ExecuteReader() as MySqlDataReader;
-    //   int recipeId = 0;
-    //   string recipeName = "";
-    //   int recipeRating = 0;
-    //   string recipeIngredients = "";
-    //   string recipeInstructions = "";
-    //   while(rdr.Read())
-    //   {
-    //     recipeId = rdr.GetInt32(0);
-    //     recipeName = rdr.GetString(1);
-    //     recipeRating = rdr.GetInt32(2);
-    //     recipeIngredients = rdr.GetString(3);
-    //     recipeInstructions = rdr.GetString(4);
-    //   }
-    //   Recipe newRecipe = new Recipe(recipeName, recipeRating, recipeIngredients, recipeInstructions, recipeId);
-    //   conn.Close();
-    //   if (conn != null)
-    //   {
-    //     conn.Dispose();
-    //   }
-    //   return newRecipe;
-    // }
-
-
     public static Dog Find(int id)
     {
       MySqlConnection conn = DB.Connection();
@@ -236,7 +187,7 @@ namespace Pupster.Models
       MySqlConnection conn = DB.Connection();
       conn.Open();
       var cmd = conn.CreateCommand() as MySqlCommand;
-      cmd.CommandText = @"INSERT INTO dogs (name, photo, sex, breed, color, size, age, neutered_spayed, shots, activity, good_with_dogs, good_with_cats, good_with_kids, house_trained, good_alone, needs_description) VALUES (@name, @photo, @sex, @breed, @color, @size, @age, @neuteredSpayed, @shots, @activity, @goodWithDogs, @goodWithCats, @goodWithKids, @houseTrained, @goodAlone, @needsDescription);";
+      cmd.CommandText = @"INSERT INTO dogs (name, photo, sex, breed, color, size, age, neutered_spayed, shots_up_to_date, activity_level, good_with_dogs, good_with_cats, good_with_kids, house_trained, good_alone, needs_description) VALUES (@name, @photo, @sex, @breed, @color, @size, @age, @neuteredSpayed, @shots, @activity, @goodWithDogs, @goodWithCats, @goodWithKids, @houseTrained, @goodAlone, @needsDescription);";
       cmd.Parameters.AddWithValue("@name", Name);
       cmd.Parameters.AddWithValue("@photo", Photo);
       cmd.Parameters.AddWithValue("@sex", Sex);
@@ -300,6 +251,20 @@ namespace Pupster.Models
       cmd.Parameters.AddWithValue("@houseTrained", houseTrained);
       cmd.Parameters.AddWithValue("@goodAlone", goodAlone);
       cmd.Parameters.AddWithValue("@needsDescription", needsDescription);
+      cmd.ExecuteNonQuery();
+      conn.Close();
+      if (conn != null)
+      {
+        conn.Dispose();
+      }
+    }
+
+    public static void ClearAll()
+    {
+      MySqlConnection conn = DB.Connection();
+      conn.Open();
+      var cmd = conn.CreateCommand() as MySqlCommand;
+      cmd.CommandText = @"DELETE FROM dogs;";
       cmd.ExecuteNonQuery();
       conn.Close();
       if (conn != null)
