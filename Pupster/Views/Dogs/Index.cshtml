@@ -14,7 +14,6 @@
 <title>Pupster</title>
 </head>
 <body>
-
 <div class="main-1">
 <div class="main-1-content">
 <h1>PuPsteR</h1>
@@ -27,6 +26,11 @@
 
 <div class="box-1">
 <h1>Adoptable Dogs</h1>
+<form action='/dogs/search' method='post'>
+  <label for='dogName'></label>
+  <input id='dogName' name='dogName' type='text' placeholder="Daisy">
+  <button type='submit' class="btn btn-dark">Search by Name</button>
+</form>
 <hr>
 <main class="grid">
 @if (Model.Count == 0)
