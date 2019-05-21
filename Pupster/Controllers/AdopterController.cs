@@ -9,11 +9,32 @@ using Pupster.Models;
 namespace Pupster.Controllers
 {
 
-  // [HttpPost("/adopter/{adopterId}/quiz")]
-  //      public IActionResult TakeQuiz(int adopterId, int value)
-  //      {
-  //        Major.AssignCourse(majorId, int.Parse(courseId));
-  //        return RedirectToAction("Show", new{majorId = majorId});
-  //      }
+
+  public class AdopterController : Controller
+  {
+
+    [HttpGet("/adopters")]
+    public ActionResult Index()
+    {
+      List<Adopter> allAdopters = Adopter.GetAll();
+      return View(allAdopters);
+    }
+
+    [HttpGet("/adopters/new")]
+    public ActionResult New()
+    {
+      return View();
+    }
+
+    // [HttpPost("/adopters")]
+    // public ActionResult Create(string adopterName)
+    // {
+    //   Adopter newAdopter = new Adopter(adopterName);
+    //   newAdopter.Save();
+    //   List<Adopter> allAdopters = Adopter.GetAll();
+    //   return View("Index", allAdopters);
+    // }
+
+  }
 }
 
