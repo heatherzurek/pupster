@@ -46,5 +46,18 @@ namespace Pupster.Tests
         //Assert
         Assert.IsInstanceOfType(view, typeof(RedirectToActionResult));
       }
+      [TestMethod]
+      public void Create_RedirectsToCorrectAction_Index()
+      {
+        //Arrange
+        DogsController controller = new DogsController();
+        RedirectToActionResult actionResult = controller.Create("Fido") as RedirectToActionResult;
+
+        //Act
+        string result = actionResult.ActionName;
+
+        //Assert
+        Assert.AreEqual(result, "Index");
+      }
     }
 }

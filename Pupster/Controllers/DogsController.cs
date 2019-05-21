@@ -46,8 +46,10 @@ namespace Pupster.Controllers
         // bool HouseTrained = houseTrained;
         // bool GoodAlone = goodAlone;
         // bool NeedsDescription = needsDescription;
-      return View("Index", allDogs);
+      return RedirectToAction("Index");
     }
+
+
 
 
     [HttpGet("/dogs/{id}")]
