@@ -111,7 +111,7 @@ namespace Pupster.Models
         bool goodAlone = rdr.GetBoolean(15);
         string needsDescription = rdr.GetString(16);
         Dog newDog = new Dog(dogName, dogImage, sex, breed, color, size, age, neuteredSpayed, shots, activity, goodWithDogs, goodWithCats, goodWithKids, houseTrained, goodAlone, needsDescription, id);
-
+        allDogs.Add(newDog);
       }
       conn.Close();
       if (conn != null)
