@@ -1,0 +1,61 @@
+@using Pupster.Models;
+@{
+  Layout = "_Layout";
+}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
+  <link href="~/css/styles.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display&display=swap" rel="stylesheet">
+  <title>Pupster</title>
+</head>
+<body>
+
+  <div class="main-1">
+    <div class="main-1-content">
+      <h1>PuPsteR</h1>
+      <h2>Find your perfect match</h2>
+    </div>
+    <div class="main-quiz">
+
+      <form action="/dogs" method="get">
+        <button type="submit" name="button" class="btn btn-dark">View All Dogs</button>
+      </form>
+
+    </div>
+  </div>
+
+  <div class="box-1">
+    <h1>About @Model.Name</h1>
+    <hr>
+    <img src="/@Model.Photo" alt="Dog Bio Photo">
+    @Model.Age
+    @Model.Sex
+    @Model.Breed
+    @Model.Color
+    @Model.Size
+    @Model.NeuteredSpayed
+    @Model.Shots
+    @Model.Activity
+    @Model.GoodWithDogs
+    @Model.GoodWithKids
+    @Model.GoodWithCats
+    @Model.HouseTrained
+    @Model.GoodAlone
+    @Model.NeedsDescription
+
+  </div>
+
+  <div class="main-2">
+  </div>
+  <div class="contact">
+    <h1>Contact</h1>
+    <hr>
+    <a href="mailto:heather.zurek@gmail.com">Email</a> | <a href="#">Facebook</a> | <a href="#">Instagram</a> <br>
+  </div>
+
+</body>
+</html>
