@@ -66,8 +66,49 @@ namespace Pupster.Tests
       //Assert
       CollectionAssert.AreEqual(testList, result);
     }
+    [TestMethod]
+    public void Get_ReturnsCategoryId_Int()
+    {
+      //arrange
+      Dog newDog = new Dog("puppy", "photo", "sex", "string breed", "string color", "string size", "string age", true, true, "string activity", true, true, true, true, true, "string needsDescription", 0);
+
+      //act
+      int result = newDog.Id;
+      Assert.AreEqual(0, result);
+    }
+    [TestMethod]
+    public void Find_ReturnsCorrectItem_Item()
+    {
+      //arrange
+      // string name1 ="Bingo";
+      // string name2 = "Fido";
+      Dog newDog1 = new Dog("puppy", "photo", "sex", "string breed", "string color", "string size", "string age", true, true, "string activity", true, true, true, true, true, "string needsDescription");
+      newDog1.Save();
+      // Dog newDog2 = new Dog("puppy", "photo", "sex", "string breed", "string color", "string size", "string age", true, true, "string activity", true, true, true, true, true, "string needsDescription", 0);
+
+      //act
+      Dog result = Dog.Find(newDog1.Id);
+
+      //assert
+      Assert.AreEqual(newDog1, result);
+    }
+    [TestMethod]
+    public void Edit_UpdateDogInDatabase_String()
+    {
+      Dog testDog = new Dog ("puppy", "photo", "sex", "string breed", "string color", "string size", "string age", true, true, "string activity", true, true, true, true, true, "string needsDescription", 1);
+      testDog.Save();
+
+      Dog compareDog = new Dog ("puppy1", "photo1", "sex1", "string breed1", "string color1", "string size1", "string age", true, true, "string activity1", true, true, true, true, true, "string needsDescription1");
+
+      testDog.Edit("puppy1", "photo1", "sex1", "string breed1", "string color1", "string size1", "string age", true, true, "string activity1", true, true, true, true, true, "string needsDescription1");
+      testDog.Save();
 
 
+      Dog result = Dog.Find(testDog.Id.GetAll());
+      Console.WriteLine(compareDog.Name);
+      Console.WriteLine(testDog.Name);
 
+      Assert.AreEqual(compareDog, testDog);
+    }
   }
 }
