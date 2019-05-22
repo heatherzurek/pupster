@@ -95,20 +95,20 @@ namespace Pupster.Tests
     [TestMethod]
     public void Edit_UpdateDogInDatabase_String()
     {
-      Dog testDog = new Dog ("puppy", "photo", "sex", "string breed", "string color", "string size", "string age", true, true, "string activity", true, true, true, true, true, "string needsDescription", 1);
-      testDog.Save();
+      Dog originalDog = new Dog ("puppy", "photo", "sex", "string breed", "string color", "string size", "string age", true, true, "string activity", true, true, true, true, true, "string needsDescription");
+      originalDog.Save();
 
-      Dog compareDog = new Dog ("puppy1", "photo1", "sex1", "string breed1", "string color1", "string size1", "string age", true, true, "string activity1", true, true, true, true, true, "string needsDescription1");
+      Dog newDog = new Dog ("puppy1", "photo1", "sex1", "string breed1", "string color1", "string size1", "string age", true, true, "string activity1", true, true, true, true, true, "string needsDescription1");
 
-      testDog.Edit("puppy1", "photo1", "sex1", "string breed1", "string color1", "string size1", "string age", true, true, "string activity1", true, true, true, true, true, "string needsDescription1");
-      testDog.Save();
+      originalDog.Edit("puppy1", "photo1", "sex1", "string breed1", "string color1", "string size1", "string age", true, true, "string activity1", true, true, true, true, true, "string needsDescription1");
 
 
-      Dog result = Dog.Find(testDog.Id.GetAll());
-      Console.WriteLine(compareDog.Name);
-      Console.WriteLine(testDog.Name);
+      Dog editedDog = Dog.Find(originalDog.Id);
+      Console.WriteLine(editedDog.Name);
+      Console.WriteLine(newDog.Name);
 
-      Assert.AreEqual(compareDog, testDog);
+      Assert.AreEqual(editedDog.Name, newDog.Name);
+
     }
   }
 }
