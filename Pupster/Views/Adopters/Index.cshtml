@@ -18,48 +18,52 @@
     <div class="main-1-content">
       <div class="new-1">
         <div class="formText">
-      <h2>Find your match!</h2>
+      <h2>Find your match quiz!</h2>
+      <br><br>
 
       <form action="/adopter" method="post">
         <input id="adopterId" name="adopterId" type="hidden">
         <label for="question1" class="one">What age are you looking for?</label><br>
-        <input type="radio" name="question1" value="baby"> Baby<br>
-        <input type="radio" name="question1" value="young"> Young<br>
-        <input type="radio" name="question1" value="adult"> Adult<br>
-        <input type="radio" name="question1" value="senior"> Senior<br>
+        <input type="radio" name="question1" value="baby"> Puppy  <input type="radio" name="question1" value="young">  Young <input type="radio" name="question1" value="adult">  Adult <input type="radio" name="question1" value="senior">  Senior<br>
+        <br>
 
-        <label for="question2" class="one">What sex are you looking for?</label><br>
-        <input type="radio" name="question2" value="Male"> Male<br>
-        <input type="radio" name="question2" value="Female"> Female<br>
+        <label for="question2" class="one">What gender are you looking for?</label><br>
+        <input type="radio" name="question2" value="Male"> Male  <input type="radio" name="question2" value="Female"> Female<br>
+        <br>
 
-        <label for="question3" class="one">What size are you looking for?</label><br>
-        <input type="radio" name="question3" value="small"> Small<br>
-        <input type="radio" name="question3" value="large"> Large<br>
+        <label for="question3" class="one">How much dog can you handle?</label><br>
+        <input type="radio" name="question3" value="small"> Small  <input type="radio" name="question3" value="medium"> Medium <input type="radio" name="question3" value="large"> Large<br>
+        <br>
 
-        <label for="question4" class="one">Will there be kids in the household?</label><br>
-        <input type="radio" name="question4" value="true"> Yes<br>
-        <input type="radio" name="question4" value="false"> No<br>
+        <label for="question4" class="one">Will I need to get along with children?</label><br>
+        <input type="radio" name="question4" value="true"> Yes  <input type="radio" name="question4" value="false"> No<br>
+        <br>
 
-        <label for="question5" class="one">Will there be cats in the household?</label><br>
-        <input type="radio" name="question5" value="true"> Yes<br>
-        <input type="radio" name="question5" value="false"> No<br>
+        <label for="question5" class="one">Will there be any bossy cats?</label><br>
+        <input type="radio" name="question5" value="true"> Yes  <input type="radio" name="question5" value="false"> No<br>
+        <br>
 
-        <label for="question6" class="one">Will there be other dogs in the household?</label><br>
-        <input type="radio" name="question6" value="true"> Yes<br>
-        <input type="radio" name="question6" value="false"> No<br>
+        <label for="question6" class="one">Will I get a doggy sibling or two?</label><br>
+        <input type="radio" name="question6" value="true"> Yes <input type="radio" name="question6" value="false"> No<br>
+        <br>
 
-        <label for="question7" class="one">Are you looking for a fully housetrained dog?</label><br>
-        <input type="radio" name="question7" value="true"> Yes<br>
-        <input type="radio" name="question7" value="false"> No<br>
+        <label for="question7" class="one">Is it ok if I have accidents in the house?</label><br>
+        <input type="radio" name="question7" value="true"> Yes <input type="radio" name="question7" value="false"> No<br>
+        <br>
 
-        <label for="question8" class="one">Will the dog be home alone most of the day?</label><br>
-        <input type="radio" name="question8" value="true"> Yes<br>
-        <input type="radio" name="question8" value="false"> No<br>
+        <label for="question8" class="one">Will I be home alone often?</label><br>
+        <input type="radio" name="question8" value="true"> Yes <input type="radio" name="question8" value="false"> No<br>
+        <br>
 
         <label for="question9" class="one">How active are you?</label><br>
-        <input type="radio" name="question9" value="low"> The couch and I are well acquainted<br>
-        <input type="radio" name="question9" value="medium"> I'm pretty active<br>
-        <input type="radio" name="question9" value="high"> I need a dog that can keep up with me
+        <input type="radio" name="question9" value="low"> Well acquainted with the couch <input type="radio" name="question9" value="medium"> I'm pretty active <input type="radio" name="question9" value="high"> I need a dog that can keep up with me
+        <br><br>
+        <label for="question10" class="one">Will we go on fun road trips?</label><br>
+        <input type="radio" name="question10" value="true"> Yes <input type="radio" name="question10" value="false"> No<br><br>
+        <label for="question11" class="one">Do you mind lots of dog fur?</label><br>
+        <input type="radio" name="question11" value="true"> Yes <input type="radio" name="question11" value="false"> No<br><br>
+        <label for="question12" class="one">Which describes you best?</label><br>
+        <input type="radio" name="question12" value="true"> Introvert (Shy) <input type="radio" name="question12" value="false"> Extrovert (Social!)
         <br>
         <br>
         <br>
@@ -67,6 +71,10 @@
 
         <button type="submit" class="btn btn-dark">See Results!</button>
       </form>
+      <br>
+        <form action="/" method="get">
+          <button type="submit" name="button" class="btn btn-dark">Back Home</button>
+        </form>
 
 
       <br>

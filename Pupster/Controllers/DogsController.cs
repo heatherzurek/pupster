@@ -24,7 +24,7 @@ namespace Pupster.Controllers
     }
 
     [HttpPost("/dogs")]
-    public ActionResult Create(string name, string photo, string sex, string breed, string color, string size, string age, bool neuteredSpayed, bool shots, string activity, bool goodWithDogs, bool goodWithCats, bool goodWithKids, bool houseTrained, bool goodAlone, string needsDescription, int id = 0)
+    public ActionResult Create(string name, string photo, string sex, string breed, string color, string size, string age, bool neuteredSpayed, bool shots, string activity, bool goodWithDogs, bool goodWithCats, bool goodWithKids, bool houseTrained, bool goodAlone, string needsDescription)
     {
       Dog newDog = new Dog(name, photo, sex, breed, color, size, age, neuteredSpayed, shots, activity, goodWithDogs, goodWithCats, goodWithKids, houseTrained, goodAlone, needsDescription);
       newDog.Save();
@@ -74,16 +74,17 @@ namespace Pupster.Controllers
     //   Dog.ClearAll();
     //   return RedirectToAction("Index", "Home");
     // }
-
     [HttpPost("/dogs/search")]
-    public ActionResult SearchByName(string name)
+    public ActionResult SearchByDog(string name)
     {
-      // Dog searchDog = new Dog(title);
-      // searchDog.Save();
+      // Book searchBook = new Book(title);
+      // searchBook.Save();
       List<Dog> matchDogs = new List<Dog>{};
       matchDogs.Add(Dog.Search(name));
       return View("Index", matchDogs);
     }
+
+
 
   }
 }

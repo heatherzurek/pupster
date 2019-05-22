@@ -7,49 +7,31 @@
     <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
     <link href="css/styles.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <title>Pupster</title>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">PuPsteR</a>
+      <a class="navbar-brand" href="#">PuPsteR |</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
           <a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
-          <a class="nav-item nav-link" href="#">View Dogs</a>
+          <a class="nav-item nav-link" href="#aboutPupster">About</a>
+          <a class="nav-item nav-link" href="/dogs">View Dogs</a>
           <a class="nav-item nav-link" href="/dogs/new">Add Dog</a>
-          <a class="nav-item nav-link" href="/dogs/resources">Resources</a>
+          <a class="nav-item nav-link" href="/adopters">Quiz</a>
         </div>
       </div>
     </nav>
     @RenderBody()
-
-      <!-- <div class="main-1">
-        <div class="main-1-content">
-          <h1>PuPsteR</h1>
-          <h2>Find your perfect match</h2>
-        </div>
-        <div class="main-quiz">
-          <button id="/" type="button" name="button" class="btn btn-dark ">Start Quiz</button>
-        </div>
-      </div>
-      <div class="box-1">
-        <h1>About Pupster</h1>
-        <hr>
-        <p>Pupster is a shelter dog companion matching quiz to help you find your perfect shelter dog match based on a personality quiz, similar to a dating website!</p>
-      </div>
-      <div class="main-2">
-      </div>
-      <div class="contact">
-        <h1>Contact</h1>
-        <hr>
-        <a href="mailto:heather.zurek@gmail.com">Email</a> | <a href="#">Facebook</a> | <a href="#">Instagram</a> <br>
-      </div> -->
       <footer>
-        <a href="mailto:heather.zurek@gmail.com">Contact</a>
-        <p>©2019 | Pupster</p>
+        @* <a href="#"><img src="img/fbicon.png" alt="facebook icon"></a> <a href="#"><img src="img/igicon.png" alt="instagram icon"></a>
+        <br> *@
+        <br>
+      <p><a href="mailto:heather.zurek@gmail.com">Email</a> | ©2019 | Pupster </p>
     </footer>
   </body>
 </html>
