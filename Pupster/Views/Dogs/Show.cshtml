@@ -1,0 +1,77 @@
+@using Pupster.Models;
+@{
+  Layout = "_Layout";
+}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
+  <link href="~/css/styles.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display&display=swap" rel="stylesheet">
+  <title>Pupster</title>
+</head>
+<body>
+
+  <div class="main-1">
+    <div class="main-1-content">
+  </div>
+
+  <div class="box-show">
+    <h1>About @Model.Name</h1>
+    <hr>
+
+    <div class="showGrid">
+
+        <div class="column1">
+          <img src="/@Model.Photo" alt="Dog Bio Photo">
+        </div>
+
+
+        <div class="column2">
+          @Model.NeedsDescription
+          @Model.Age
+          @Model.Sex
+          @Model.Breed
+          @Model.Color
+          @Model.Size
+          @Model.Activity Activity Level
+        </div>
+
+
+      <div class="bools1">
+        @if(@Model.HouseTrained)
+        {<h6>✓</h6>}
+        else{<h6>✗</h6>}House Trained
+
+        @if(@Model.NeuteredSpayed)
+        {<h6>✓</h6>}
+        else{<h6>✗</h6>} Neutered or Spayed
+        @if(@Model.Shots){<h6>✓</h6>}
+        else{<h6>✗</h6>} Up to date on shots?
+      </div>
+      <div class="bools2">
+
+        @if(@Model.GoodWithDogs){<h6>✓</h6>}
+        else{<h6>✗</h6>} Good with Dogs?
+        @if(@Model.GoodWithKids){<h6>✓</h6>}
+        else{<h6>✗</h6>}   Good with Kids?
+      </div>
+      <div class="bools3">
+
+        @if(@Model.GoodWithCats){<h6>✓</h6>}
+        else{<h6>✗</h6>}  Good with Cats?
+
+        @if(@Model.GoodAlone){<h6>✓</h6>}
+        else{<h6>✗</h6>}Good alone?
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-2">
+  </div>
+
+</body>
+</html>

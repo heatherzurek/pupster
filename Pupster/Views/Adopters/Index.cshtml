@@ -1,0 +1,72 @@
+@using Pupster.Models;
+@{
+  Layout = "_Layout";
+}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
+  <link href="css/styles.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display&display=swap" rel="stylesheet">
+  <title>Pupster</title>
+</head>
+<body>
+
+  <div class="main-1">
+    <div class="main-1-content">
+      <h1>PuPsteR</h1>
+      <h2>Find your perfect match</h2>
+    </div>
+    <div class="main-quiz">
+
+    </div>
+    <div class="box-2">
+
+      <form action="/adopter" method="post">
+        <input id="adopterId" name="adopterId" type="hidden">
+        <input id="2" name="dogId" type="hidden">
+
+        <label for="question1" class="one">What age are you looking for?</label><br>
+        <input type="radio" name="question1" value="baby"> Baby<br>
+        <input type="radio" name="question1" value="young"> Young<br>
+        <input type="radio" name="question1" value="adult"> Adult<br>
+        <input type="radio" name="question1" value="senior"> Senior<br>
+
+        <label for="question2" class="one">What sex are you looking for?</label><br>
+        <input type="radio" name="question2" value="Male"> Male<br>
+        <input type="radio" name="question2" value="Female"> Female<br>
+
+        <label for="question3" class="one">What size are you looking for?</label><br>
+        <input type="radio" name="question3" value="small"> Small<br>
+        <input type="radio" name="question3" value="large"> Large<br>
+
+        <label for="question4" class="one">Will there be kids in the household?</label><br>
+        <input type="radio" name="question4" value="true"> Yes<br>
+        <input type="radio" name="question4" value="false"> No<br>
+
+        <label for="question5" class="one">Will there be cats in the household?</label><br>
+        <input type="radio" name="question5" value="true"> Yes<br>
+        <input type="radio" name="question5" value="false"> No<br>
+
+        <label for="question6" class="one">Will there be other dogs in the household?</label><br>
+        <input type="radio" name="question6" value="true"> Yes<br>
+        <input type="radio" name="question6" value="false"> No<br>
+
+        <label for="question7" class="one">Are you looking for a fully housetrained dog?</label><br>
+        <input type="radio" name="question7" value="true"> Yes<br>
+        <input type="radio" name="question7" value="false"> No<br>
+
+        <label for="question8" class="one">Will the dog be home alone most of the day?</label><br>
+        <input type="radio" name="question8" value="true"> Yes<br>
+        <input type="radio" name="question8" value="false"> No<br>
+
+        <button type="submit">See Results!</button>
+      </form>
+
+    </div>
+  </div>
+
+</body>
+</html>

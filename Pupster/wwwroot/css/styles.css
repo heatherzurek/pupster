@@ -69,6 +69,21 @@ header h2 {
   height: 100%;
 }
 
+.main-new {
+  background-color: #72775b;
+}
+/* .main-new {
+  opacity: 1;
+  background-image: url("../img/dog33.jpg");
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+} */
+
+
 .main-1-content {
   text-align: center;
   padding: 25px 0;
@@ -79,8 +94,9 @@ header h2 {
   font-family: 'Major Mono Display', monospace;
   margin-top: 20%;
   font-size: 6.5rem;
-  color: #505634;
+  color: #40481d;
   text-shadow: 1px 1px 1px #000;
+
 
   /* font-weight: 500; */
 }
@@ -107,6 +123,38 @@ header h2 {
   color: #FFFFFF;
 }
 
+
+.box-2 {
+  text-align: center;
+  background-color: #72775b;
+  padding: 20px;
+  width: 100%;
+  color: #FFFFFF;
+  padding-bottom: 10%;
+}
+
+.box-show {
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.75);
+  padding: 20px;
+  width: 100%;
+  color: #494C3A;
+  min-height: 1000px;
+}
+
+.new-1 {
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.75);
+  padding: 20px;
+  max-width: 50%;
+  margin: auto;
+  color: #000000;
+}
+
+.formText {
+  opacity: 100%;
+}
+
 .main-2 {
   opacity: 0.8;
   background-image: url("https://images.unsplash.com/photo-1529353908102-ffb931037b07?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1502&q=80");
@@ -121,14 +169,14 @@ header h2 {
 
 }
 
-.contact{
+footer {
   text-align: center;
-  color: #000000;
+  color: orange;
   margin-bottom: 30px;
   margin-top: 30px;
 }
 
-.contact h2 {
+footer h2 {
   margin-top: 15px;
 }
 
@@ -148,6 +196,30 @@ a:hover {
 .bg-light {
   background-color: #FFFFFF!important;
 }
+
+/* start grid for dogs */
+
+.grid {
+  display: grid;
+  gap: 1%;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 3fr));
+  justify-content: center;
+  grid-auto-rows: 500px;
+}
+
+/* .card > img {
+  width: 100%;
+} */
+
+/* .card {
+  height: 450px;
+} */
+
+
+/* end grid for dogs */
+
+
+
 
 /* break points for tablets/iphones */
 
@@ -174,4 +246,61 @@ a:hover {
   .main-1 h1 {
     font-size: 60px;
   }
+}
+
+.showGrid
+{
+  display: grid;
+  gap: 1%;
+  grid-template-columns: repeat(5, 1fr);
+  justify-content: center;
+  grid-auto-rows: 30vh;
+}
+
+.column1
+{
+  grid-column: 2/3;
+}
+
+.column2
+{
+  grid-column: 3/5;
+  overflow: scroll;
+}
+
+.bools1
+{
+  margin-top: 10%;
+  grid-row: 2/3;
+  grid-column: 2/3;
+}
+
+.bools2
+{
+  margin-top: 10%;
+  grid-row: 2/3;
+  grid-column: 3/4;
+}
+
+.bools3
+{
+  margin-top: 10%;
+  grid-row: 2/3;
+  grid-column: 4/5;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

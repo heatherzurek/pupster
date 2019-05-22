@@ -14,8 +14,8 @@ namespace Pupster.Controllers
     {
       List<Dog> allDogs = Dog.GetAll();
       return View(allDogs);
-    }
 
+    }
 
     [HttpGet("/dogs/new")]
     public ActionResult New()
@@ -29,25 +29,11 @@ namespace Pupster.Controllers
       Dog newDog = new Dog(name, photo, sex, breed, color, size, age, neuteredSpayed, shots, activity, goodWithDogs, goodWithCats, goodWithKids, houseTrained, goodAlone, needsDescription);
       newDog.Save();
       List<Dog> allDogs = Dog.GetAll();
-        // int Id = id;
-        // string Name = name;
-        // string Photo = photo;
-        // string Sex = sex;
-        // string Breed = breed;
-        // string Color = color;
-        // string Size = size;
-        // string Age = age;
-        // bool NeuteredSpayed = neuteredSpayed;
-        // bool Shots = shots;
-        // string Activity = activity;
-        // bool GoodWithDogs = goodWithDogs;
-        // bool GoodWithCats = goodWithCats;
-        // bool GoodWithKids = goodWithKids;
-        // bool HouseTrained = houseTrained;
-        // bool GoodAlone = goodAlone;
-        // bool NeedsDescription = needsDescription;
-      return View("Index", allDogs);
+
+      return RedirectToAction("Index");
     }
+
+
 
 
     [HttpGet("/dogs/{id}")]
@@ -56,6 +42,13 @@ namespace Pupster.Controllers
 
       Dog selectedDog = Dog.Find(id);
       return View(selectedDog);
+    }
+
+
+    [HttpGet("/dogs/resources")]
+    public ActionResult Resources()
+    {
+      return View();
     }
 
     // [HttpPost("/dogs/{dogId}")]
@@ -81,6 +74,16 @@ namespace Pupster.Controllers
     //   Dog.ClearAll();
     //   return RedirectToAction("Index", "Home");
     // }
+
+    [HttpPost("/dogs/search")]
+    public ActionResult SearchByName(string name)
+    {
+      // Dog searchDog = new Dog(title);
+      // searchDog.Save();
+      List<Dog> matchDogs = new List<Dog>{};
+      matchDogs.Add(Dog.Search(name));
+      return View("Index", matchDogs);
+    }
 
   }
 }

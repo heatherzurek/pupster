@@ -14,7 +14,6 @@
 <title>Pupster</title>
 </head>
 <body>
-
 <div class="main-1">
 <div class="main-1-content">
 <h1>PuPsteR</h1>
@@ -27,29 +26,37 @@
 
 <div class="box-1">
 <h1>Adoptable Dogs</h1>
+<form action='/dogs/search' method='post'>
+  <label for='dogName'></label>
+  <input id='dogName' name='dogName' type='text' placeholder="Daisy">
+  <button type='submit' class="btn btn-dark">Search by Name</button>
+</form>
 <hr>
-
+<main class="grid">
 @if (Model.Count == 0)
 {
   <h3>No dogs have been added yet!</h3>
 }
 
-<ul>
 @foreach (var dog in Model)
 {
-  <li><a href='/dogs/@dog.Id'>@dog.Name</a></li>
-}
-</ul>
+    <a href='/dogs/@dog.Id'>
 
+  <div class="card">
+    <img class="card-img-top" src="@dog.Photo" alt="doggo photo">
+    <div class="card-body">
+      <p class="card-text">@dog.Name<br>@dog.Age</p>
+    </div>
+  </div>
+  </a>
+}
+
+</main>
 </div>
 
 <div class="main-2">
 </div>
-<div class="contact">
-<h1>Contact</h1>
-<hr>
-<a href="mailto:heather.zurek@gmail.com">Email</a> | <a href="#">Facebook</a> | <a href="#">Instagram</a> <br>
-</div>
+
 
 </body>
 </html>

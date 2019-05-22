@@ -44,6 +44,7 @@ namespace Pupster.Tests
         IActionResult view = controller.Create("puppy", "photo", "sex", "string breed", "string color", "string size", "string age", true, true, "string activity", true, true, true, true, true, "string needsDescription", 0);
 
         //Assert
+
         Assert.IsInstanceOfType(view, typeof(ViewResult));
       }
       // [TestMethod]
@@ -59,5 +60,6 @@ namespace Pupster.Tests
       //   //Assert
       //   Assert.AreEqual(actionResult.ActionName, "Index");
       // }
+
     }
 }
