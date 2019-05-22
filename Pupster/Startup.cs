@@ -44,7 +44,7 @@ namespace Pupster
 
   public static class DBConfiguration
   {
-    public static string ConnectionString = "server=localhost;user id=root;password=root;port=8889;database=pupster;";
+    public static string ConnectionString = "server=localhost;user id=kayaj;password=kayaj;port=3306;database=pupster;";
   }
 
 }
