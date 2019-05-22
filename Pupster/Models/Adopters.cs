@@ -18,6 +18,7 @@ namespace Pupster.Models
     public void Result(string question1, string question2, string question3, bool question4, bool question5, bool question6, bool question7, bool question8)
     {
       List<Dog> allDogs = Dog.GetAll();
+      List<int> model = new List<int>{};
       // int score = 0;
       foreach (Dog dog in allDogs)
       {
@@ -32,49 +33,79 @@ namespace Pupster.Models
         cmd.Parameters.AddWithValue("@dogId", dogId);
         cmd.Parameters.AddWithValue("@score", score);
         var rdr = cmd.ExecuteReader() as MySqlDataReader;
+        conn.Close();
+
+        if (conn != null)
+        {
+          conn.Dispose();
+        }
       }
-      //
-      // return score;
+
+    }
+
+    public static List<int> GetSortedResults()
+    {
+      List<int> allSortedIds = new List<int> {};
+      MySqlConnection conn = DB.Connection();
+      conn.Open();
+      var cmd = conn.CreateCommand() as MySqlCommand;
+      cmd.CommandText = @"SELECT dog_id FROM dog_score ORDER BY score DESC;";
+      var rdr = cmd.ExecuteReader() as MySqlDataReader;
+      while(rdr.Read())
+      {
+        int dogId= rdr.GetInt32(1);
+        allSortedIds.Add(dogId);
+      }
+      conn.Close();
+      if (conn != null)
+      {
+        conn.Dispose();
+      }
+      return allSortedIds;
     }
 
 
-  // public int Score(string question1, string question2, string question3, bool question4, bool question5, bool question6, bool question7, bool question8, int id)
-  // {
-  //   int score = 0;
-  //   if (age == question1)
-  //   {
-  //     score +=1;
-  //   }
-  //   if (sex == question2)
-  //   {
-  //     score +=1;
-  //   }
-  //   if (size == question3)
-  //   {
-  //     score +=1;
-  //   }
-  //   if (goodWithKids == question4)
-  //   {
-  //     score +=1;
-  //   }
-  //   if (goodWithCats == question5)
-  //   {
-  //     score +=1;
-  //   }
-  //   if (goodWithDogs == question6)
-  //   {
-  //     score +=1;
-  //   }
-  //   if (houseTrained == question7)
-  //   {
-  //     score +=1;
-  //   }
-  //   if (goodAlone == question8)
-  //   {
-  //     score +=1;
-  //   }
-  //   return score;
-  // }
 
-}
+
+    // public static List<Adopter> GetAllResults()
+    // {
+    //   List<Adopter> allSortedAdopters = new List<Adopter> {};
+    //   MySqlConnection conn = DB.Connection();
+    //   conn.Open();
+    //   var cmd = conn.CreateCommand() as MySqlCommand;
+    //   cmd.CommandText = @"SELECT * FROM dog_score SORT BY score DESC;";
+    //   var rdr = cmd.ExecuteReader() as MySqlDataReader;
+    //   while(rdr.Read())
+    //   {
+    //     int id = rdr.GetInt32(0);
+    //     int dogId= rdr.GetInt32(1);
+    //     int score = rdr.GetInt32(2);
+    //
+    //     Dog newAdopter = new Adopter(dogId, score, id);
+    //     allSortedAdopters.Add(newAdopter);
+    //   }
+    //   conn.Close();
+    //   if (conn != null)
+    //   {
+    //     conn.Dispose();
+    //   }
+    //   return allSortedAdopters;
+    // }
+
+    // public void SortResults()
+    // {
+    //   MySqlConnection conn = DB.Connection();
+    //   conn.Open();
+    //   var cmd = conn.CreateCommand() as MySqlCommand;
+    //   cmd.CommandText = @"SELECT * FROM dog_score ORDER BY score DESC;";
+    //   conn.Close();
+    //   Console.WriteLine("test");
+    //   if (conn != null)
+    //   {
+    //     conn.Dispose();
+    //   }
+    // }
+
+
+  }
 }

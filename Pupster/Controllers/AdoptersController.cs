@@ -26,9 +26,17 @@ namespace Pupster.Controllers
     {
       Adopter newAdopter = new Adopter(adopterId);
       newAdopter.Result(question1, question2, question3, question4, question5, question6, question7, question8);
-      return RedirectToAction("Index");
+
+      List<int> sortedDogIds = Adopter.GetSortedResults();
+      sortedDogIds.ForEach(Console.WriteLine);
+      return RedirectToAction("Show", sortedDogIds);
     }
 
+    // [HttpGet("/adopters/results")]
+    // public ActionResult Index()
+    // {
+    //   return View();
+    // }
 
 
         // [HttpGet("/dogs/{id}")]
