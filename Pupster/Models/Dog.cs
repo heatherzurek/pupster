@@ -297,6 +297,8 @@ namespace Pupster.Models
       cmd.Parameters.AddWithValue("@newNeedsDescription", newNeedsDescription);
 
       cmd.ExecuteNonQuery();
+
+
       conn.Close();
       if (conn != null)
       {
@@ -367,8 +369,8 @@ namespace Pupster.Models
      MySqlConnection conn = DB.Connection();
      conn.Open();
      var cmd = conn.CreateCommand() as MySqlCommand;
-     cmd.CommandText = @"SELECT * FROM dogs WHERE name LIKE = @name;";
-     cmd.Parameters.AddWithValue("@name", name);
+     cmd.CommandText = @"SELECT * FROM dogs WHERE name LIKE (@name);";
+     cmd.Parameters.AddWithValue("@name", "%" + name + "%");
      var rdr = cmd.ExecuteReader() as MySqlDataReader;
      int dogId = 0;
      string dogName = "";

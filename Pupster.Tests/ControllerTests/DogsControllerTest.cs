@@ -6,6 +6,13 @@ using Pupster.Models;
 
 namespace Pupster.Tests
 {
+  [TestClass]
+  public class DogControllerTest
+  {
+    public DogControllerTest()
+  {
+    DBConfiguration.ConnectionString = "server=localhost;user id=root;password=root;port=8889;database=pupster_tests;";
+  }
     [TestClass]
     public class DogsControllerTest
     {
@@ -60,6 +67,6 @@ namespace Pupster.Tests
       //   //Assert
       //   Assert.AreEqual(actionResult.ActionName, "Index");
       // }
-
+     }
     }
-}
+  }
