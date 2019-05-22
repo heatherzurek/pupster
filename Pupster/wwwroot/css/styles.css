@@ -123,6 +123,16 @@ header h2 {
   color: #FFFFFF;
 }
 
+
+.box-2 {
+  text-align: center;
+  background-color: #72775b;
+  padding: 20px;
+  width: 100%;
+  color: #FFFFFF;
+  padding-bottom: 10%;
+}
+
 .box-show {
   text-align: center;
   background-color: rgba(255, 255, 255, 0.75);
