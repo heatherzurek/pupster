@@ -77,49 +77,6 @@ namespace Pupster.Models
       }
     }
 
-
-    // static void Find()
-    // {
-    //   Dog newDog = 0;
-    //
-    //   List<Dog> dogList = new List <Dog> {};
-    //
-    //   MySqlConnection conn = DB.Connection();
-    //   conn.Open();
-    //   var cmd = conn.CreateCommand() as MySqlCommand;
-    //   cmd.CommandText = @"SELECT * FROM dogs;";
-    //   var rdr = cmd.ExecuteReader() as MySqlDataReader;
-    //   while(rdr.Read())
-    //   {
-    //     int id = rdr.GetInt32(0);
-    //     string dogName = rdr.GetString(1);
-    //     string dogImage = rdr.GetString(2);
-    //     string sex = rdr.GetString(3);
-    //     string breed = rdr.GetString(4);
-    //     string color = rdr.GetString(5);
-    //     string size = rdr.GetString(6);
-    //     string age = rdr.GetString(7);
-    //     bool neuteredSpayed = rdr.GetBoolean(8);
-    //     bool shots = rdr.GetBoolean(9);
-    //     string activity = rdr.GetString(10);
-    //     bool goodWithDogs = rdr.GetBoolean(11);
-    //     bool goodWithCats = rdr.GetBoolean(12);
-    //     bool goodWithKids = rdr.GetBoolean(13);
-    //     bool houseTrained = rdr.GetBoolean(14);
-    //     bool goodAlone = rdr.GetBoolean(15);
-    //     string needsDescription = rdr.GetString(16);
-    //     Dog newDog = new Dog(dogName, dogImage, sex, breed, color, size, age, neuteredSpayed, shots, activity, goodWithDogs, goodWithCats, goodWithKids, houseTrained, goodAlone, needsDescription, id);
-    //     allDogs.Add(newDog);
-    //   }
-    //   conn.Close();
-    //   if (conn != null)
-    //   {
-    //     conn.Dispose();
-    //   }
-    //
-    // foreach (var prop in dogList)
-    // }
-
     public override int GetHashCode()
     {
       return this.Id.GetHashCode();
@@ -233,17 +190,12 @@ namespace Pupster.Models
       var rdr = cmd.ExecuteReader() as MySqlDataReader;
       rdr.Read();
       int score = rdr.GetInt32(0);
-      // Console.WriteLine(score);
-      // while(rdr.Read())
-      // {
-      //   score = rdr.GetInt32(2);
-      // }
+
       conn.Close();
       if (conn != null)
       {
         conn.Dispose();
       }
-      Console.WriteLine(score);
       return score;
     }
 
@@ -342,91 +294,52 @@ namespace Pupster.Models
         conn.Dispose();
       }
     }
-    //   public static Dog Find(int id)
-    // {
-    //   MySqlConnection conn = DB.Connection();
-    //   conn.Open();
-    //   var cmd = conn.CreateCommand() as MySqlCommand;
-    //   cmd.CommandText = @"SELECT * FROM dogs WHERE id = (@searchId);";
-    //   MySqlParameter searchId = new MySqlParameter();
-    //   searchId.ParameterName = "@searchId";
-    //   searchId.Value = id;
-    //   cmd.Parameters.Add(searchId);
-    //   var rdr = cmd.ExecuteReader() as MySqlDataReader;
-    //   int CategoryId = 0;
-    //   string CategoryName = "";
-    //   while(rdr.Read())
-    //   {
-    //     dogId = rdr.GetInt32(0);
-    //     dogName = rdr.GetString(1);
-    //     dogPhoto = rdr.GetString(2);
-    //     dogSex = rdr.GetString(3);
-    //     dogBreed = rdr.GetString(4);
-    //     dogColor = rdr.GetString(5);
-    //     dogSize = rdr.GetString(6);
-    //     dogAge = rdr.GetString(7);
-    //     neuteredSpayed = rdr.GetBoolean(8);
-    //     shots = rdr.GetBoolean(9);
-    //     dogActivity = rdr.GetString(10);
-    //     goodWithDogs = rdr.GetBoolean(11);
-    //     goodWithCats = rdr.GetBoolean(12);
-    //     goodWithKids = rdr.GetBoolean(13);
-    //     houseTrained = rdr.GetBoolean(14);
-    //     goodAlone = rdr.GetBoolean(15);
-    //     needsDescription = rdr.GetString(16);
-    //   }
-    //   Dog newDog = new Dog(DogName, DogId);
-    //   conn.Close();
-    //   if (conn != null)
-    //   {
-    //     conn.Dispose();
-    //   }
-    //   return newDog;
-    // }
 
 
 
-
-
-    public int Score(string question1, string question2, string question3, bool question4, bool question5, bool question6, bool question7, bool question8, int id)
+    public int Score(string question1, string question2, string question3, bool question4, bool question5, bool question6, bool question7, bool question8, string question9, int id)
     {
       int score = 0;
       if (Age == question1)
       {
-        score +=1;
+        score +=15;
       }
       if (Sex == question2)
       {
-        score +=1;
+        score +=15;
       }
       if (Size == question3)
       {
-        score +=1;
+        score +=10;
       }
       if (GoodWithKids == question4)
       {
-        score +=1;
+        score +=10;
       }
       if (GoodWithCats == question5)
       {
-        score +=1;
+        score +=10;
       }
       if (GoodWithDogs == question6)
       {
-        score +=1;
+        score +=10;
       }
       if (HouseTrained == question7)
       {
-        score +=1;
+        score +=10;
       }
       if (GoodAlone == question8)
       {
-        score +=1;
+        score +=10;
+      }
+      if (Activity == question9)
+      {
+        score +=10;
       }
       return score;
     }
 
- 
+
 
    public static Dog Search(string name)
    {
