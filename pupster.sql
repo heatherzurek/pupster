@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.7.7
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: May 21, 2019 at 09:35 PM
--- Server version: 5.7.25
--- PHP Version: 7.3.1
+-- Generation Time: May 22, 2019 at 11:27 PM
+-- Server version: 5.6.38
+-- PHP Version: 7.2.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -60,6 +60,30 @@ INSERT INTO `dogs` (`id`, `name`, `photo`, `sex`, `breed`, `color`, `size`, `age
 (9, 'Pinky', 'img/Pinky.jpg', 'Female', 'Chihuahua/Dachshund Mix', 'Tan/Yellow/Fawn - with White', '\r\n(when grown) Small 25 lbs (11 kg) or less', '2 months old, Puppy', 0, 1, 'high', 1, 1, 1, 0, 0, 'Just a pup, Pinky needs lots of love and attention. She needs to be house trained. Look how cute! Come fall in love with this sweet little button. '),
 (11, 'Rosie', 'img/Rosie.jpg', 'Female', 'American Pit Bull Terrier Mix', 'Red/Golden/Orange/Chestnut - with White', 'Med. 26-60 lbs (12-27 kg)', 'senior', 1, 1, 'low', 1, 0, 1, 1, 1, 'The other half of the “Golden Girls” duo, Rose has the most heart warming friendship with her partner in crime Dorothy. Though this gal is a senior, her mobility is still quite good. She enjoys walks with her fellow seniors and loves to stop along the way to nibble grass or watch squirrels. She loves snuggling up with Dorothy and is content to hang out wherever there’s a comfy spot to lay down. She’s great during car rides especially if her gal Dorothy is with her, they’ll both curl up in the backseat and snooze. Rose is as sweet as they come and this duo still has a lot of life and love to share with a special forever family of their own. ');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `dog_score`
+--
+
+CREATE TABLE `dog_score` (
+  `id` int(11) NOT NULL,
+  `dog_id` int(11) NOT NULL,
+  `score` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `dog_score`
+--
+
+INSERT INTO `dog_score` (`id`, `dog_id`, `score`) VALUES
+(601, 1, 10),
+(602, 3, 35),
+(603, 5, 25),
+(604, 7, 25),
+(605, 9, 55),
+(606, 11, 25);
+
 --
 -- Indexes for dumped tables
 --
@@ -71,6 +95,12 @@ ALTER TABLE `dogs`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `dog_score`
+--
+ALTER TABLE `dog_score`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -78,7 +108,13 @@ ALTER TABLE `dogs`
 -- AUTO_INCREMENT for table `dogs`
 --
 ALTER TABLE `dogs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT for table `dog_score`
+--
+ALTER TABLE `dog_score`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=607;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
