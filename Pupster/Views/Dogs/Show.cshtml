@@ -13,32 +13,30 @@
   <title>Pupster</title>
 </head>
 <body>
-
-  <div class="main-1">
-    <div class="main-1-content">
-  </div>
-
+  <div class="showbg">
   <div class="box-show">
     <h1>About @Model.Name</h1>
     <hr>
-
     <div class="showGrid">
-
         <div class="column1">
           <img src="/@Model.Photo" alt="Dog Bio Photo">
         </div>
 
-
         <div class="column2">
           @Model.NeedsDescription
-          @Model.Age
-          @Model.Sex
-          @Model.Breed
-          @Model.Color
-          @Model.Size
-          @Model.Activity Activity Level
+          <br><br>
+          <strong>Age:</strong> @Model.Age
+          <br>
+          <strong>Sex:</strong> @Model.Sex
+          <br>
+          <strong>Breed:</strong> @Model.Breed
+          <br>
+          <strong>Coloring:</strong> @Model.Color
+          <br>
+          <strong>Size:</strong> @Model.Size
+          <br>
+          <strong>Activity Level:</strong> @Model.Activity Activity Level
         </div>
-
 
       <div class="bools1">
         @if(@Model.HouseTrained)
@@ -68,9 +66,6 @@
       </div>
       </div>
     </div>
-  </div>
-
-  <div class="main-2">
   </div>
 
 </body>

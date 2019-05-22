@@ -93,7 +93,7 @@ header h2 {
 .main-1-content h1 {
   font-family: 'Major Mono Display', monospace;
   margin-top: 20%;
-  font-size: 6.5rem;
+  font-size: 7.5rem;
   color: #40481d;
   text-shadow: 1px 1px 1px #000;
 
@@ -110,7 +110,7 @@ header h2 {
 .main-quiz {
   position: absolute;
   left: 0;
-  top: 80%;
+  top: 65%;
   text-align: center;
   width: 100%;
 }
@@ -139,7 +139,7 @@ header h2 {
   padding: 20px;
   width: 100%;
   color: #494C3A;
-  min-height: 1000px;
+  height: 100%;
 }
 
 .new-1 {
@@ -187,6 +187,10 @@ a {
 a:hover {
   color: orange;
   font-weight: bold;
+}
+
+img {
+  border-radius: 0em 6em;
 }
 
 .navbar-brand {
@@ -303,4 +307,8 @@ a:hover {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+.showbg {
+  background-color: black;
 }
