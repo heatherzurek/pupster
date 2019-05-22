@@ -6,7 +6,6 @@ html {
 body {
   font-family: 'Roboto', sans-serif;
   background-color: #FFFFFF;
-  /* color: #A3B3AE; */
   height: 100%;
   display: block;
 }
@@ -135,10 +134,11 @@ header h2 {
 
 .box-show {
   text-align: center;
-  background-color: rgba(255, 255, 255, 0.75);
+  /* background-color: rgba(255, 255, 255, 0.75); */
+  background-color: #72775b;
   padding: 20px;
   width: 100%;
-  color: #494C3A;
+  color: #000000;
   height: 100%;
 }
 
@@ -166,7 +166,11 @@ header h2 {
   padding-left: 20px;
   border: #505634;
   background-color: #505634;
+}
 
+.btn:hover {
+  background-color: #000000;
+  /* background-image: linear-gradient(to right, #6D6027, #D3CBB8);} */
 }
 
 footer {
@@ -310,5 +314,4 @@ img {
 }
 
 .showbg {
-  background-color: black;
-}
+background-image: linear-gradient(to right, #69723f, #72775b);}
