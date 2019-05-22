@@ -15,7 +15,7 @@ namespace Pupster.Models
       Id = adopterId;
     }
 
-    public void Result(string question1, string question2, string question3, bool question4, bool question5, bool question6, bool question7, bool question8)
+    public void Result(string question1, string question2, string question3, bool question4, bool question5, bool question6, bool question7, bool question8, string question9)
     {
       List<Dog> allDogs = Dog.GetAll();
       List<int> model = new List<int>{};
@@ -25,7 +25,7 @@ namespace Pupster.Models
         int score = 0;
         int dogId = dog.Id;
         int adopterId = Id;
-        score = dog.Score(question1, question2, question3, question4, question5, question6, question7, question8, adopterId);
+        score = dog.Score(question1, question2, question3, question4, question5, question6, question7, question8, question9, adopterId);
         MySqlConnection conn = DB.Connection();
         conn.Open();
         var cmd = conn.CreateCommand() as MySqlCommand;
