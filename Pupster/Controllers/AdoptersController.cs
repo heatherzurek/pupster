@@ -22,11 +22,10 @@ namespace Pupster.Controllers
     // }
 
     [HttpPost("/adopter")]
-    public ActionResult QuizMatch(int adopterId, int dogId, string question1, string question2, string question3, bool question4, bool question5, bool question6, bool question7, bool question8, int id)
+    public ActionResult QuizMatch(int adopterId, string question1, string question2, string question3, bool question4, bool question5, bool question6, bool question7, bool question8)
     {
-      Result newResult = new Result(adopterId, dogId);
-      newResult.Loop(question1, question2, question3, question4, question5, question6, question7, question8, id);
-
+      Adopter newAdopter = new Adopter(adopterId);
+      newAdopter.Result(question1, question2, question3, question4, question5, question6, question7, question8);
       return RedirectToAction("Index");
     }
 
