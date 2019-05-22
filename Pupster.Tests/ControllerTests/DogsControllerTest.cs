@@ -6,6 +6,13 @@ using Pupster.Models;
 
 namespace Pupster.Tests
 {
+  [TestClass]
+  public class DogControllerTest
+  {
+    public DogControllerTest()
+  {
+    DBConfiguration.ConnectionString = "server=localhost;user id=root;password=root;port=8889;database=pupster_tests;";
+  }
     [TestClass]
     public class DogsControllerTest
     {
@@ -41,11 +48,11 @@ namespace Pupster.Tests
         DogsController controller = new DogsController();
 
         //Act
-        IActionResult view = controller.Create("puppy", "photo", "sex", "string breed", "string color", "string size", "string age", true, true, "string activity", true, true, true, true, true, "string needsDescription", 0);
+        IActionResult view = controller.Create("puppy", "photo", "sex", "string breed", "string color", "string size", "string age", true, true, "string activity", true, true, true, true, true, "string needsDescription");
 
         //Assert
 
-        Assert.IsInstanceOfType(view, typeof(ViewResult));
+        Assert.IsInstanceOfType(view, typeof(RedirectToActionResult));
       }
       // [TestMethod]
       // public void Create_RedirectsToCorrectAction_Index()
@@ -60,6 +67,6 @@ namespace Pupster.Tests
       //   //Assert
       //   Assert.AreEqual(actionResult.ActionName, "Index");
       // }
-
+     }
     }
-}
+  }
