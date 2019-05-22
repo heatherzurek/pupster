@@ -43,25 +43,54 @@ namespace Pupster.Models
 
     }
 
-    public static List<int> GetSortedResults()
+    public static List<Dog> GetSortedResults()
     {
-      List<int> allSortedIds = new List<int> {};
+      // List<int> allSortedIds = new List<int> {};
+      // MySqlConnection conn = DB.Connection();
+      // conn.Open();
+      // var cmd = conn.CreateCommand() as MySqlCommand;
+      // cmd.CommandText = @"SELECT dog_id FROM dog_score ORDER BY score DESC;";
+      // var rdr = cmd.ExecuteReader() as MySqlDataReader;
+      // while(rdr.Read())
+      // {
+      //   int dogId= rdr.GetInt32(1);
+      //   allSortedIds.Add(dogId);
+      // }
+      // conn.Close();
+      // if (conn != null)
+      // {
+      //   conn.Dispose();
+      // }
+
+      List<Dog> dogInfo = new List<Dog> {};
       MySqlConnection conn = DB.Connection();
       conn.Open();
       var cmd = conn.CreateCommand() as MySqlCommand;
-      cmd.CommandText = @"SELECT dog_id FROM dog_score ORDER BY score DESC;";
+      cmd.CommandText = @"SELECT dogs.* FROM dog_score JOIN dogs ON (dog_score.dog_id = dogs.id) ORDER BY dog_score.score DESC;";
       var rdr = cmd.ExecuteReader() as MySqlDataReader;
       while(rdr.Read())
       {
-        int dogId= rdr.GetInt32(1);
-        allSortedIds.Add(dogId);
+        int id = rdr.GetInt32(0);
+        string dogName = rdr.GetString(1);
+        string dogImage = rdr.GetString(2);
+        string sex = rdr.GetString(3);
+        string breed = rdr.GetString(4);
+        string color = rdr.GetString(5);
+        string size = rdr.GetString(6);
+        string age = rdr.GetString(7);
+        bool neuteredSpayed = rdr.GetBoolean(8);
+        bool shots = rdr.GetBoolean(9);
+        string activity = rdr.GetString(10);
+        bool goodWithDogs = rdr.GetBoolean(11);
+        bool goodWithCats = rdr.GetBoolean(12);
+        bool goodWithKids = rdr.GetBoolean(13);
+        bool houseTrained = rdr.GetBoolean(14);
+        bool goodAlone = rdr.GetBoolean(15);
+        string needsDescription = rdr.GetString(16);
+        Dog newDog = new Dog(dogName, dogImage, sex, breed, color, size, age, neuteredSpayed, shots, activity, goodWithDogs, goodWithCats, goodWithKids, houseTrained, goodAlone, needsDescription, id);
+        dogInfo.Add(newDog);
       }
-      conn.Close();
-      if (conn != null)
-      {
-        conn.Dispose();
-      }
-      return allSortedIds;
+      return dogInfo;
     }
 
 

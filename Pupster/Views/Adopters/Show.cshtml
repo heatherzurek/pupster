@@ -1,4 +1,4 @@
-@using Pupster.Models;
+@* @using Pupster.Models;
 @{
   Layout = "_Layout";
 }
@@ -36,7 +36,7 @@
 @if (Model.Count == 0)
 {
   <h3>No dogs have been added yet!</h3>
-}
+} *@
 
 @foreach (var dog in Model)
 {
@@ -50,7 +50,7 @@
   </div>
   </a>
 }
-
+@* 
 </main>
 </div>
 
@@ -59,4 +59,4 @@
 
 
 </body>
-</html>
+</html> *@

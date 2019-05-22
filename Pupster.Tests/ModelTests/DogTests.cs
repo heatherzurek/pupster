@@ -104,7 +104,7 @@ namespace Pupster.Tests
       testDog.Save();
 
 
-      Dog result = Dog.Find(testDog.Id.GetAll());
+      Dog result = Dog.Find(testDog.Id);
       Console.WriteLine(compareDog.Name);
       Console.WriteLine(testDog.Name);
 
