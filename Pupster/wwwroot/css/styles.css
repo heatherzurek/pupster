@@ -6,7 +6,6 @@ html {
 body {
   font-family: 'Roboto', sans-serif;
   background-color: #FFFFFF;
-  /* color: #A3B3AE; */
   height: 100%;
   display: block;
 }
@@ -93,7 +92,7 @@ header h2 {
 .main-1-content h1 {
   font-family: 'Major Mono Display', monospace;
   margin-top: 20%;
-  font-size: 6.5rem;
+  font-size: 7.5rem;
   color: #40481d;
   text-shadow: 1px 1px 1px #000;
 
@@ -110,7 +109,7 @@ header h2 {
 .main-quiz {
   position: absolute;
   left: 0;
-  top: 80%;
+  top: 65%;
   text-align: center;
   width: 100%;
 }
@@ -135,11 +134,12 @@ header h2 {
 
 .box-show {
   text-align: center;
-  background-color: rgba(255, 255, 255, 0.75);
+  /* background-color: rgba(255, 255, 255, 0.75); */
+  background-color: #72775b;
   padding: 20px;
   width: 100%;
-  color: #494C3A;
-  min-height: 1000px;
+  color: #000000;
+  height: 100%;
 }
 
 .new-1 {
@@ -166,7 +166,11 @@ header h2 {
   padding-left: 20px;
   border: #505634;
   background-color: #505634;
+}
 
+.btn:hover {
+  background-color: #000000;
+  /* background-image: linear-gradient(to right, #6D6027, #D3CBB8);} */
 }
 
 footer {
@@ -187,6 +191,10 @@ a {
 a:hover {
   color: orange;
   font-weight: bold;
+}
+
+img {
+  border-radius: 0em 6em;
 }
 
 .navbar-brand {
@@ -304,3 +312,6 @@ a:hover {
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
+.showbg {
+background-image: linear-gradient(to right, #69723f, #72775b);}
