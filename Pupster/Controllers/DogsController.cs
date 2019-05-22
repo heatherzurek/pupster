@@ -75,15 +75,7 @@ namespace Pupster.Controllers
     //   return RedirectToAction("Index", "Home");
     // }
 
-    [HttpPost("/dogs/search")]
-    public ActionResult SearchByName(string name)
-    {
-      // Dog searchDog = new Dog(title);
-      // searchDog.Save();
-      List<Dog> matchDogs = new List<Dog>{};
-      matchDogs.Add(Dog.Search(name));
-      return View("Index", matchDogs);
-    }
+
 
   }
 }

@@ -175,26 +175,30 @@ header h2 {
 
 footer {
   text-align: center;
-  color: orange;
   margin-bottom: 30px;
   margin-top: 30px;
-}
-
-footer h2 {
-  margin-top: 15px;
 }
 
 a {
   color: #000000!important;
 }
-
+/*
 a:hover {
   color: orange;
   font-weight: bold;
+} */
+
+label {
+  font-weight: bold;
+  font-size: 20px;
 }
 
 img {
   border-radius: 0em 6em;
+}
+
+.col-md a {
+  color: #FFFFFF;
 }
 
 .navbar-brand {
@@ -215,17 +219,11 @@ img {
   grid-auto-rows: 500px;
 }
 
-/* .card > img {
-  width: 100%;
-} */
-
-/* .card {
-  height: 450px;
-} */
-
-
 /* end grid for dogs */
 
+h1 {
+  color: #000000;
+}
 
 
 
@@ -313,5 +311,5 @@ img {
   background: #555;
 }
 
-.showbg {
-background-image: linear-gradient(to right, #69723f, #72775b);}
+/* .showbg {
+background-image: linear-gradient(to right, #69723f, #72775b);} */
