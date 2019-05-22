@@ -74,6 +74,15 @@ namespace Pupster.Controllers
     //   Dog.ClearAll();
     //   return RedirectToAction("Index", "Home");
     // }
+    [HttpPost("/dogs/search")]
+    public ActionResult SearchByDog(string name)
+    {
+      // Book searchBook = new Book(title);
+      // searchBook.Save();
+      List<Dog> matchDogs = new List<Dog>{};
+      matchDogs.Add(Dog.Search(name));
+      return View("Index", matchDogs);
+    }
 
 
 
