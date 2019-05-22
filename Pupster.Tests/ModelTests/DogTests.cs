@@ -93,22 +93,35 @@ namespace Pupster.Tests
       Assert.AreEqual(newDog1, result);
     }
     [TestMethod]
+    public void Search_ReturnsCorrectInfo_Info()
+    {
+      Dog newDog = new Dog("puppy", "photo", "sex", "string breed", "string color", "string size", "string age", true, true, "string activity", true, true, true, true, true, "string needsDescription", 1);
+      newDog.Save();
+
+      string searchPhrase = "pup";
+      var foundDog = Dog.Search(searchPhrase);
+      Assert.AreEqual(newDog, foundDog);
+      //user enters a phrase, make it .ToLower()
+      //run a method to see if the phrase cntains our second AddEnvironmentVariables
+      //assert true and true
+    }
+    [TestMethod]
     public void Edit_UpdateDogInDatabase_String()
     {
-      Dog testDog = new Dog ("puppy", "photo", "sex", "string breed", "string color", "string size", "string age", true, true, "string activity", true, true, true, true, true, "string needsDescription", 1);
+      Dog testDog = new Dog ("puppy", "photo", "sex", "string breed", "string color", "string size", "string age", true, true, "string activity", true, true, true, true, true, "string needsDescription");
       testDog.Save();
 
       Dog compareDog = new Dog ("puppy1", "photo1", "sex1", "string breed1", "string color1", "string size1", "string age", true, true, "string activity1", true, true, true, true, true, "string needsDescription1");
 
       testDog.Edit("puppy1", "photo1", "sex1", "string breed1", "string color1", "string size1", "string age", true, true, "string activity1", true, true, true, true, true, "string needsDescription1");
-      testDog.Save();
+      // testDog.Save();
 
 
-      Dog result = Dog.Find(testDog.Id.GetAll());
+      Dog result = Dog.Find(testDog.Id);
       Console.WriteLine(compareDog.Name);
-      Console.WriteLine(testDog.Name);
+      Console.WriteLine(result.Name);
 
-      Assert.AreEqual(compareDog, testDog);
+      Assert.AreEqual(compareDog.Name, result.Name);
     }
   }
 }
