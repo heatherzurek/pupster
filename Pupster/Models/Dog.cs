@@ -180,6 +180,29 @@ namespace Pupster.Models
       return foundDog;
     }
 
+    public int GetScore()
+    {
+      MySqlConnection conn = DB.Connection();
+      conn.Open();
+      var cmd = conn.CreateCommand() as MySqlCommand;
+      cmd.CommandText = @"SELECT score FROM dog_score WHERE dog_id = (@searchId);";
+      cmd.Parameters.AddWithValue("@searchId", this.Id);
+      var rdr = cmd.ExecuteReader() as MySqlDataReader;
+      rdr.Read();
+      int score = rdr.GetInt32(0);
+      // Console.WriteLine(score);
+      // while(rdr.Read())
+      // {
+      //   score = rdr.GetInt32(2);
+      // }
+      conn.Close();
+      if (conn != null)
+      {
+        conn.Dispose();
+      }
+      Console.WriteLine(score);
+      return score;
+    }
 
 
     public void Save()

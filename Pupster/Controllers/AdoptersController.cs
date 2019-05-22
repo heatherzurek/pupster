@@ -25,6 +25,7 @@ namespace Pupster.Controllers
     public ActionResult QuizMatch(int adopterId, string question1, string question2, string question3, bool question4, bool question5, bool question6, bool question7, bool question8)
     {
       Adopter newAdopter = new Adopter(adopterId);
+      Adopter.ClearAll();
       newAdopter.Result(question1, question2, question3, question4, question5, question6, question7, question8);
 
       var model = Adopter.GetSortedResults();

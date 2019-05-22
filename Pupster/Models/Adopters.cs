@@ -45,22 +45,6 @@ namespace Pupster.Models
 
     public static List<Dog> GetSortedResults()
     {
-      // List<int> allSortedIds = new List<int> {};
-      // MySqlConnection conn = DB.Connection();
-      // conn.Open();
-      // var cmd = conn.CreateCommand() as MySqlCommand;
-      // cmd.CommandText = @"SELECT dog_id FROM dog_score ORDER BY score DESC;";
-      // var rdr = cmd.ExecuteReader() as MySqlDataReader;
-      // while(rdr.Read())
-      // {
-      //   int dogId= rdr.GetInt32(1);
-      //   allSortedIds.Add(dogId);
-      // }
-      // conn.Close();
-      // if (conn != null)
-      // {
-      //   conn.Dispose();
-      // }
 
       List<Dog> dogInfo = new List<Dog> {};
       MySqlConnection conn = DB.Connection();
@@ -94,46 +78,19 @@ namespace Pupster.Models
     }
 
 
-
-
-    // public static List<Adopter> GetAllResults()
-    // {
-    //   List<Adopter> allSortedAdopters = new List<Adopter> {};
-    //   MySqlConnection conn = DB.Connection();
-    //   conn.Open();
-    //   var cmd = conn.CreateCommand() as MySqlCommand;
-    //   cmd.CommandText = @"SELECT * FROM dog_score SORT BY score DESC;";
-    //   var rdr = cmd.ExecuteReader() as MySqlDataReader;
-    //   while(rdr.Read())
-    //   {
-    //     int id = rdr.GetInt32(0);
-    //     int dogId= rdr.GetInt32(1);
-    //     int score = rdr.GetInt32(2);
-    //
-    //     Dog newAdopter = new Adopter(dogId, score, id);
-    //     allSortedAdopters.Add(newAdopter);
-    //   }
-    //   conn.Close();
-    //   if (conn != null)
-    //   {
-    //     conn.Dispose();
-    //   }
-    //   return allSortedAdopters;
-    // }
-
-    // public void SortResults()
-    // {
-    //   MySqlConnection conn = DB.Connection();
-    //   conn.Open();
-    //   var cmd = conn.CreateCommand() as MySqlCommand;
-    //   cmd.CommandText = @"SELECT * FROM dog_score ORDER BY score DESC;";
-    //   conn.Close();
-    //   Console.WriteLine("test");
-    //   if (conn != null)
-    //   {
-    //     conn.Dispose();
-    //   }
-    // }
+    public static void ClearAll()
+    {
+      MySqlConnection conn = DB.Connection();
+      conn.Open();
+      var cmd = conn.CreateCommand() as MySqlCommand;
+      cmd.CommandText = @"DELETE FROM dog_score;";
+      cmd.ExecuteNonQuery();
+      conn.Close();
+      if (conn != null)
+      {
+        conn.Dispose();
+      }
+    }
 
 
   }
