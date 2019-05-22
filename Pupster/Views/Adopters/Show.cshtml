@@ -1,0 +1,55 @@
+@using Pupster.Models;
+@{
+  Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
+<link href="css/styles.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Major+Mono+Display&display=swap" rel="stylesheet">
+<title>Pupster</title>
+</head>
+<body>
+
+</div>
+
+<div class="box-1">
+<h1>Adoptable Dogs</h1>
+<form action='/dogs/search' method='post'>
+  <label for='dogName'></label>
+  <input id='dogName' name='dogName' type='text' placeholder="Daisy">
+  <button type='submit' class="btn btn-dark">Search by Name</button>
+</form>
+<hr>
+<main class="grid">
+@if (Model.Count == 0)
+{
+  <h3>No dogs have been added yet!</h3>
+}
+
+@foreach (Dog dog in Model)
+{
+    <a href='/dogs/@dog.Id'>
+
+  <div class="card">
+    <img class="card-img-top" src="@dog.Photo" alt="doggo photo">
+    <div class="card-body">
+      <p class="card-text">@dog.Name<br>@dog.Age<br> @dog.GetScore() </p>
+    </div>
+  </div>
+  </a>
+}
+
+</main>
+</div>
+
+<div class="main-2">
+</div>
+
+
+</body>
+</html>

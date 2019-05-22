@@ -18,6 +18,7 @@ namespace Pupster.Models
     public void Result(string question1, string question2, string question3, bool question4, bool question5, bool question6, bool question7, bool question8)
     {
       List<Dog> allDogs = Dog.GetAll();
+      List<int> model = new List<int>{};
       // int score = 0;
       foreach (Dog dog in allDogs)
       {
@@ -32,49 +33,65 @@ namespace Pupster.Models
         cmd.Parameters.AddWithValue("@dogId", dogId);
         cmd.Parameters.AddWithValue("@score", score);
         var rdr = cmd.ExecuteReader() as MySqlDataReader;
+        conn.Close();
+
+        if (conn != null)
+        {
+          conn.Dispose();
+        }
       }
-      //
-      // return score;
+
+    }
+
+    public static List<Dog> GetSortedResults()
+    {
+
+      List<Dog> dogInfo = new List<Dog> {};
+      MySqlConnection conn = DB.Connection();
+      conn.Open();
+      var cmd = conn.CreateCommand() as MySqlCommand;
+      cmd.CommandText = @"SELECT dogs.* FROM dog_score JOIN dogs ON (dog_score.dog_id = dogs.id) ORDER BY dog_score.score DESC;";
+      var rdr = cmd.ExecuteReader() as MySqlDataReader;
+      while(rdr.Read())
+      {
+        int id = rdr.GetInt32(0);
+        string dogName = rdr.GetString(1);
+        string dogImage = rdr.GetString(2);
+        string sex = rdr.GetString(3);
+        string breed = rdr.GetString(4);
+        string color = rdr.GetString(5);
+        string size = rdr.GetString(6);
+        string age = rdr.GetString(7);
+        bool neuteredSpayed = rdr.GetBoolean(8);
+        bool shots = rdr.GetBoolean(9);
+        string activity = rdr.GetString(10);
+        bool goodWithDogs = rdr.GetBoolean(11);
+        bool goodWithCats = rdr.GetBoolean(12);
+        bool goodWithKids = rdr.GetBoolean(13);
+        bool houseTrained = rdr.GetBoolean(14);
+        bool goodAlone = rdr.GetBoolean(15);
+        string needsDescription = rdr.GetString(16);
+        Dog newDog = new Dog(dogName, dogImage, sex, breed, color, size, age, neuteredSpayed, shots, activity, goodWithDogs, goodWithCats, goodWithKids, houseTrained, goodAlone, needsDescription, id);
+        dogInfo.Add(newDog);
+      }
+      return dogInfo;
     }
 
 
-  // public int Score(string question1, string question2, string question3, bool question4, bool question5, bool question6, bool question7, bool question8, int id)
-  // {
-  //   int score = 0;
-  //   if (age == question1)
-  //   {
-  //     score +=1;
-  //   }
-  //   if (sex == question2)
-  //   {
-  //     score +=1;
-  //   }
-  //   if (size == question3)
-  //   {
-  //     score +=1;
-  //   }
-  //   if (goodWithKids == question4)
-  //   {
-  //     score +=1;
-  //   }
-  //   if (goodWithCats == question5)
-  //   {
-  //     score +=1;
-  //   }
-  //   if (goodWithDogs == question6)
-  //   {
-  //     score +=1;
-  //   }
-  //   if (houseTrained == question7)
-  //   {
-  //     score +=1;
-  //   }
-  //   if (goodAlone == question8)
-  //   {
-  //     score +=1;
-  //   }
-  //   return score;
-  // }
+    public static void ClearAll()
+    {
+      MySqlConnection conn = DB.Connection();
+      conn.Open();
+      var cmd = conn.CreateCommand() as MySqlCommand;
+      cmd.CommandText = @"DELETE FROM dog_score;";
+      cmd.ExecuteNonQuery();
+      conn.Close();
+      if (conn != null)
+      {
+        conn.Dispose();
+      }
+    }
 
-}
+
+  }
 }
