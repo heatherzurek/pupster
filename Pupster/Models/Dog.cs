@@ -228,13 +228,13 @@ namespace Pupster.Models
       }
     }
 
-    public void Edit(string name, string photo, string sex, string breed, string color, string size, string age, bool neuteredSpayed, bool shots, string activity, bool goodWithDogs, bool goodWithCats, bool goodWithKids, bool houseTrained, bool goodAlone, string needsDescription, int id)
+    public void Edit(string name, string photo, string sex, string breed, string color, string size, string age, bool neuteredSpayed, bool shots, string activity, bool goodWithDogs, bool goodWithCats, bool goodWithKids, bool houseTrained, bool goodAlone, string needsDescription)
     {
       MySqlConnection conn = DB.Connection();
       conn.Open();
       var cmd = conn.CreateCommand() as MySqlCommand;
-      cmd.CommandText = @"UPDATE dogs SET (name = @name, photo = @photo, sex = @sex, breed = @breed, color = @color, size = @size, age = @age, neuteredSpayed = @neuteredSpayed, shots = @shots, activity = @activity, goodWithDogs = @goodWithDogs, goodWithCats = @goodWithCats, goodWithKids = @goodWithKids, houseTrained = @houseTrained, goodAlone = @goodAlone, needsDescription = @needsDescription) WHERE id = @searchId);";
-      cmd.Parameters.AddWithValue("@searchId", id);
+      cmd.CommandText = @"UPDATE dogs SET name = @name, photo = @photo, sex = @sex, breed = @breed, color = @color, size = @size, age = @age, neutered_spayed = @neuteredSpayed, shots_up_to_date = @shots, activity_level = @activity, good_with_dogs = @goodWithDogs, good_with_cats = @goodWithCats, good_with_kids = @goodWithKids, house_trained = @houseTrained, good_alone = @goodAlone, needs_description = @needsDescription WHERE id = @searchId;";
+      cmd.Parameters.AddWithValue("@searchId", Id);
       cmd.Parameters.AddWithValue("@name", name);
       cmd.Parameters.AddWithValue("@photo", photo);
       cmd.Parameters.AddWithValue("@sex", sex);
@@ -272,6 +272,50 @@ namespace Pupster.Models
         conn.Dispose();
       }
     }
+  //   public static Dog Find(int id)
+  // {
+  //   MySqlConnection conn = DB.Connection();
+  //   conn.Open();
+  //   var cmd = conn.CreateCommand() as MySqlCommand;
+  //   cmd.CommandText = @"SELECT * FROM dogs WHERE id = (@searchId);";
+  //   MySqlParameter searchId = new MySqlParameter();
+  //   searchId.ParameterName = "@searchId";
+  //   searchId.Value = id;
+  //   cmd.Parameters.Add(searchId);
+  //   var rdr = cmd.ExecuteReader() as MySqlDataReader;
+  //   int CategoryId = 0;
+  //   string CategoryName = "";
+  //   while(rdr.Read())
+  //   {
+  //     dogId = rdr.GetInt32(0);
+  //     dogName = rdr.GetString(1);
+  //     dogPhoto = rdr.GetString(2);
+  //     dogSex = rdr.GetString(3);
+  //     dogBreed = rdr.GetString(4);
+  //     dogColor = rdr.GetString(5);
+  //     dogSize = rdr.GetString(6);
+  //     dogAge = rdr.GetString(7);
+  //     neuteredSpayed = rdr.GetBoolean(8);
+  //     shots = rdr.GetBoolean(9);
+  //     dogActivity = rdr.GetString(10);
+  //     goodWithDogs = rdr.GetBoolean(11);
+  //     goodWithCats = rdr.GetBoolean(12);
+  //     goodWithKids = rdr.GetBoolean(13);
+  //     houseTrained = rdr.GetBoolean(14);
+  //     goodAlone = rdr.GetBoolean(15);
+  //     needsDescription = rdr.GetString(16);
+  //   }
+  //   Dog newDog = new Dog(DogName, DogId);
+  //   conn.Close();
+  //   if (conn != null)
+  //   {
+  //     conn.Dispose();
+  //   }
+  //   return newDog;
+  // }
+
+
+
 
     public static Dog Search(string name)
    {
