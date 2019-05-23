@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.7
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: May 22, 2019 at 11:50 PM
--- Server version: 5.6.38
--- PHP Version: 7.2.1
+-- Generation Time: May 23, 2019 at 03:55 PM
+-- Server version: 5.7.25
+-- PHP Version: 7.3.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -63,7 +63,10 @@ INSERT INTO `dogs` (`id`, `name`, `photo`, `sex`, `breed`, `color`, `size`, `age
 (15, 'Creed', 'Img/Creed.jpg', 'Male', 'Shar Pei + Bull Terrier + Labrador Retriever Mix', 'Black', 'Medium', '1 Year Old', 1, 1, 'Medium', 1, 0, 1, 1, 1, 'I sure hope that you believe in love and patience, and those beliefs will guide you. I hope that you will take action, that you will see past my nervous exterior and give me a chance to show you what a lovable little dude I am. Sure, I am very shy at first, but with time, training, and patience I will grow into a more confident boy. When I am feeling safe and secure, I am quite cuddly, very gentle, and willing to trust. I am excellent with other dogs, and each day I am learning more and more about how fun it can be to play. Meeting the cats was pretty scary, like most new things, but with time I know I will be more comfortable around them. I’d also do just fine in a family with older children who are calm and respectful. At just a year old, I am still a babe, but I have caught on to my crate training real quick, so continued training should come easy. So are you ready to take action?'),
 (16, 'Elmer Fudd', 'Img/ElmerFudd.jpg', 'Male', 'Wheaten Terrier + Pit Bull Terrier Mix', 'Tan', 'Medium', '7 Years Old', 1, 1, 'Medium', 1, 0, 1, 1, 1, 'Shhh! Be vewy, vewy, quiet! I am hunting for a forever family! It’s open season on love, so I’m gonna get my quota before I miss out! This is my first time tracking down love, but I have gotten some pretty good tips from the other dogs in my play group. When we are not discussing tactics, I love to get a fun game of chase going, or maybe some fetch, if I’m lucky. I haven’t had a lot of practice, but it is still fun. Respectful and sturdy children sound like fun playmates, and I get along well with other dogs too, but a home without cats is a must. I am getting the hang of my crate training and look forward to mastering it and all the other things there are for me to learn. I have dedication, I just need direction. Like what direction do I go to find my forever love? '),
 (17, 'Oslo', 'Img/Oslo.jpg', 'Male', 'American White Shepherd + Samoyed Mix', 'White', 'Large', '6 Months Old', 1, 1, 'Medium', 1, 1, 1, 1, 1, 'I’m Oslo and yes, I’m cute as could be. For a family of my own I would swim the deepest sea. And let me tell you, oh let me tell you, my heart is as big and beautiful as the sky is blue. I’m active and playful and eager to please, one tail wag from me and you’ll fall to your knees! But I do need you to work on my impulse control and mouthy behaviors so continued training is key! I enjoy sturdy, respectful children 12+, dog-savvy cats, and other dogs too. This great big world has so much to offer a young guy like me, and I’d just love to experience it all with you. Crate trained with brains and sweetness galore, you can love me a ton, but I’ll love you much more! Just give me a chance, oh give me a chance, and you’ll fall for my soul at very first glance!'),
-(18, 'Presley', 'Img/Presley.jpg', 'Male', 'German Shepherd + Australian Shepherd Mix\r\n', 'Red and Black', 'Large', '1 Year Old', 1, 1, 'Medium', 1, 0, 1, 1, 1, 'I’m caught in a trap. I can’t walk out. Because I want to love you so much, baby! Why can’t you see, that we’re meant to be. It will be hard to believe at first, since I am so darn shy, but believe me, I’m fired up to find the Graceland of my dreams, complete with a forever loving family! One with other dogs, dog-savvy cats, or gentle children 8+ sounds great. So, do you have what it takes to raise a King? I’m no doubt going to need a lot of patience, time, consistency, and understanding. But we will be adorable along the way, and one day soon you’ll call me your hunka hunka burning love! But until that day, let’s have a little less conversation and a little more action, please!');
+(18, 'Presley', 'Img/Presley.jpg', 'Male', 'German Shepherd + Australian Shepherd Mix\r\n', 'Red and Black', 'Large', '1 Year Old', 1, 1, 'Medium', 1, 0, 1, 1, 1, 'I’m caught in a trap. I can’t walk out. Because I want to love you so much, baby! Why can’t you see, that we’re meant to be. It will be hard to believe at first, since I am so darn shy, but believe me, I’m fired up to find the Graceland of my dreams, complete with a forever loving family! One with other dogs, dog-savvy cats, or gentle children 8+ sounds great. So, do you have what it takes to raise a King? I’m no doubt going to need a lot of patience, time, consistency, and understanding. But we will be adorable along the way, and one day soon you’ll call me your hunka hunka burning love! But until that day, let’s have a little less conversation and a little more action, please!'),
+(19, 'Humphrey', 'Img/Humphrey.jpg', 'Male', 'Bullmastiff Mix', 'Brindle with white', 'Large, 79lbs', '12 Years Old, Senior', 1, 1, 'Low', 1, 1, 1, 1, 1, 'Hi! I\'m located in Eugene, Oregon with Northwest Dog Project!'),
+(20, 'Ramsey', 'Img/Ramsey.jpg', 'Male', 'American Pit Bull Terrier Mix', 'Gray + Salt and Pepper', 'Large', '9 Years Old, Senior', 1, 1, 'Low', 0, 0, 1, 1, 1, 'Hi! I\'m located in Eugene, Oregon with Northwest Dog Project!'),
+(21, 'Stanley', 'Img/Stanley.jpg', 'Male', 'Chihuahua Mix\r\n', 'Black and Tan', 'Small', '9 Years Old, Senior', 1, 1, 'Low', 1, 1, 1, 1, 1, 'Meet little Stanley! This adorable guy is a young senior who has the sweetest and silliest personality, he\'s a real charmer! Stanley had been living as a stray for quite some time and was in rough shape when he first came into the rescue. Since being with us he\'s gained weight back, his skin looks a million times better and his hair has grown back in. Stanley can be a bit weary of strangers at first (mostly men) but with slow and steady introductions he warms up and will be anyone\'s best bud. Stanley does well with other dogs and currently shares his space with a cat too. Stanley loves to get out for walks, playing out in the play yard and hanging with his human buds. He will make a great addition to a mellow, loving family that wants to treat him like the little prince he is for the rest of his days! Stanley is with Northwest Dog Project, Eugene Oregon. ');
 
 -- --------------------------------------------------------
 
@@ -113,7 +116,7 @@ ALTER TABLE `dog_score`
 -- AUTO_INCREMENT for table `dogs`
 --
 ALTER TABLE `dogs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `dog_score`
