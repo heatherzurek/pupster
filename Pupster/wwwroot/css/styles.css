@@ -254,6 +254,8 @@ h1 {
   }
   .main-1 h1 {
     font-size: 60px;
+
+  }
   }
 }
 
@@ -313,8 +315,3 @@ h1 {
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
-
-
-
-/* .showbg {
-background-image: linear-gradient(to right, #69723f, #72775b);} */
