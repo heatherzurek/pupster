@@ -33,13 +33,24 @@ namespace Pupster.Controllers
       return RedirectToAction("Index");
     }
 
+    [HttpPost("/dogs/search")]
+    public ActionResult Search(string dogName)
+    {
+      Dog selectedDog = Dog.Search(dogName);
+      if(selectedDog.Id == 0)
+      {
+        List<Dog> allDogs = Dog.GetAll();
+        return View("Search", allDogs);
+      }
+      return RedirectToAction("Show", selectedDog);
+    }
+
 
 
 
     [HttpGet("/dogs/{id}")]
     public ActionResult Show(int id)
     {
-
       Dog selectedDog = Dog.Find(id);
       return View(selectedDog);
     }
@@ -74,15 +85,15 @@ namespace Pupster.Controllers
     //   Dog.ClearAll();
     //   return RedirectToAction("Index", "Home");
     // }
-    [HttpPost("/dogs/search")]
-    public ActionResult SearchByDog(string name)
-    {
-      // Book searchBook = new Book(title);
-      // searchBook.Save();
-      List<Dog> matchDogs = new List<Dog>{};
-      matchDogs.Add(Dog.Search(name));
-      return View("Index", matchDogs);
-    }
+    // [HttpPost("/dogs/search")]
+    // public ActionResult SearchByDog(string name)
+    // {
+    //   // Book searchBook = new Book(title);
+    //   // searchBook.Save();
+    //   List<Dog> matchDogs = new List<Dog>{};
+    //   matchDogs.Add(Dog.Search(name));
+    //   return View("Index", matchDogs);
+    // }
 
 
 

@@ -14,37 +14,38 @@
 <div class="main-new">
   <div class="main-1-content">
     <div class="new-1">
-      <p>For shelter and rescue use only.</p>
+      <h2>Add a Dog</h2>
+      <h6>For shelter and rescue use only.</h6>
+      <br>
       <div class="formText">
-    <h2>Add a dog</h2>
     <form action="/dogs" method="post">
-      <input id="dogId" name="dogId" type="hidden">
+      <input id="dogId" name="dogId" type="hidden" required>
       <label for="name">Dog Name</label>
-      <input id="name" name="name" type="text">
+      <input id="name" name="name" type="text" required>
       <br>
       <br>
       <label for="photo">Photo URL</label>
-      <input id="photo" name="photo" type="text">
+      <input id="photo" name="photo" type="text" required>
       <br>
       <br>
       <label for="sex">Sex</label>
-      <input id="sex" name="sex" type="text">
+      <input id="sex" name="sex" type="text" required>
       <br>
       <br>
       <label for="breed">Breed</label>
-      <input id="breed" name="breed" type="text">
+      <input id="breed" name="breed" type="text" required>
       <br>
       <br>
       <label for="color">Color</label>
-      <input id="color" name="color" type="text">
+      <input id="color" name="color" type="text" required>
       <br>
       <br>
       <label for="size">Size</label>
-      <input id="size" name="size" type="text">
+      <input id="size" name="size" type="text" required>
       <br>
       <br>
       <label for="age">Age</label>
-      <input id="age" name="age" type="text">
+      <input id="age" name="age" type="text" required>
       <br>
       <br>
       <label for="neuteredSpayed">Neutered or Spayed?</label>
@@ -55,53 +56,53 @@
       <br>
       <br>
       <label for="shots">Is it up to date with shots?</label>
-      <select name="shots">
+      <select name="shots" required>
         <option value="true">Yes</option>
         <option value="false">No</option>
       </select>
       <br>
       <br>
       <label for="activity">What is the activity level? (low/medium/high)</label>
-      <input id="activity" name="activity" type="text">
+      <input id="activity" name="activity" type="text" required>
       <br>
       <br>
       <label for="goodWithDogs">Is it good with other dogs?</label>
-      <select name="goodWithDogs">
+      <select name="goodWithDogs" required>
         <option value="true">Yes</option>
         <option value="false">No</option>
       </select>
       <br>
       <br>
       <label for="goodWithCats">Is it good with cats?</label>
-      <select name="goodWithCats">
+      <select name="goodWithCats" required>
         <option value="true">Yes</option>
         <option value="false">No</option>
       </select>
       <br>
       <br>
       <label for="goodWithKids">Is it good with kids?</label>
-      <select name="goodWithKids">
+      <select name="goodWithKids" required>
         <option value="true">Yes</option>
         <option value="false">No</option>
       </select>
       <br>
       <br>
       <label for="houseTrained">Is it house trained?</label>
-      <select name="houseTrained">
+      <select name="houseTrained" required>
         <option value="true">Yes</option>
         <option value="false">No</option>
       </select>
       <br>
       <br>
       <label for="goodAlone">Can it stay home alone?</label>
-      <select name="goodAlone">
+      <select name="goodAlone" required>
         <option value="true">Yes</option>
         <option value="false">No</option>
       </select>
       <br>
       <br>
       <label for="needsDescription">Any additional needs?</label>
-      <input id="needsDescription" name="needsDescription" type="text">
+      <input id="needsDescription" name="needsDescription" type="text" required>
       <br>
       <br>
       <button type="submit" class="btn btn-dark">ADD</button>
