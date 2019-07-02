@@ -1,12 +1,8 @@
 # _Pupster_
 
-#### _Stuff about the app here_
+#### _A Web application that allows users to take a short quiz about their ideal type of dog to join their home, then matches them by percentage with local rescue dogs._
 
 #### By _**Lindsey Baker, Kaya Jepson, Heather Zurek, Kerriann Walker**_
-
-## Description
-
-<!-- bdd table here -->
 
 ## Setup with importing SQL files
 
@@ -35,7 +31,7 @@ _No Known Bugs🐛🐞_
 
 ## Support and contact details
 
-_If you have any questions or concerns please contact us at PupsterEpicodusTeam@gmail.com_
+_If you have any questions or concerns please contact me at Heather.Zurek@gmail.com_
 
 ## Technologies Used
 
