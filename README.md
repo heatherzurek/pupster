@@ -4,6 +4,8 @@
 
 #### By _**Lindsey Baker, Kaya Jepson, Heather Zurek, Kerriann Walker**_
 
+![website view](readmeimg1.png)
+
 ## Setup with importing SQL files
 
 * _Clone this repo to your home machine_
