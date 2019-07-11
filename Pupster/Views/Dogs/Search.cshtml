@@ -23,14 +23,14 @@
 
 </div>
 
-<div class="box-1">
+<div class="box-3">
 <h1>Adoptable Dogs</h1>
 <form action='/dogs/search' method='post'>
   <label for='dogName'></label>
   <input id='dogName' name='dogName' type='text' placeholder="Daisy" required>
   <button type='submit' class="btn btn-dark">Search by Name</button>
 </form>
-<hr>
+
 <h3>Sorry, no dogs matched your search. You can view all available dogs below.</h3>
 <main class="grid">
 @if (Model.Count == 0)

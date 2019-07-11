@@ -41,6 +41,26 @@ header h2 {
   font-size: 4em;
 }
 
+footer {
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+a {
+  color: #000000!important;
+}
+
+label {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+img {
+  border-radius: 1em 1em;
+  /* border: 6px solid #6363632b; */
+}
+
 .header-buttons {
   margin: 85% 0;
   display: -webkit-box;
@@ -60,7 +80,6 @@ header h2 {
   background-size: cover;
 }
 
-
 .main-1 {
   opacity: 0.78;
   background-image: url("../img/dog80.jpg");
@@ -70,17 +89,6 @@ header h2 {
 .main-new {
   background-color: #72775b;
 }
-/* .main-new {
-  opacity: 1;
-  background-image: url("../img/dog33.jpg");
-  position: relative;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100%;
-} */
-
 
 .main-1-content {
   text-align: center;
@@ -92,7 +100,7 @@ header h2 {
   font-family: 'Major Mono Display', monospace;
   margin-top: 20%;
   font-size: 7.5rem;
-  color: #003954;
+  color: #00344c;
   text-shadow: 1px 1px 1px #000;
 }
 
@@ -142,6 +150,20 @@ header h2 {
   height: 100%;
 }
 
+.container a {
+  color: #01557d!important;
+  font-weight: bold;
+}
+
+.card {
+  border: none;
+}
+
+.container a:hover {
+  color: #042635!important;
+  font-weight: bold;
+}
+
 .new-1 {
   text-align: center;
   background-color: rgba(255, 255, 255, 0.75);
@@ -173,31 +195,21 @@ header h2 {
 
 .btn:hover {
   background-color: #000000;
-  /* background-image: linear-gradient(to right, #6D6027, #D3CBB8);} */
-}
 
-footer {
-  text-align: center;
-  margin-bottom: 30px;
-  margin-top: 30px;
-}
-
-a {
-  color: #000000!important;
-}
-
-label {
-  font-weight: bold;
-  font-size: 20px;
-}
-
-img {
-  border-radius: 1em 1em;
-  border: 6px solid #6363632b;
 }
 
 .col-md a {
   display: block;
+}
+
+.col-md h1 {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+hr {
+  background-color: 888888;
+
 }
 
 .navbar-brand {
@@ -205,7 +217,7 @@ img {
 }
 
 .bg-light {
-  background-color: #FFFFFF!important;
+  background-color: #ffffff!important;
 }
 /* start grid for dogs */
 .grid {
@@ -230,11 +242,6 @@ h1 {
   margin-top: 35px;
 }
 
-.resourcesLink a {
-  font-weight: 800;
-  color: #015279!important;
-}
-
 .showGrid
 {
   display: grid;
@@ -244,12 +251,17 @@ h1 {
   grid-auto-rows: 30vh;
 }
 
+.dogBio {
+  width: 700px;
+  margin: 0 auto;
+  margin-top: 25px;
+}
 .column1
 {
   grid-column: 2/3;
 }
 
-.column2
+/* .column2
 {
   grid-column: 3/5;
   overflow: scroll;
@@ -274,7 +286,7 @@ h1 {
   margin-top: 10%;
   grid-row: 2/3;
   grid-column: 4/5;
-}
+} */
 
 /* width */
 ::-webkit-scrollbar {
@@ -334,6 +346,9 @@ h1 {
   }
   .dogInfo {
     text-align: left;
+  }
+  .dogBio {
+    width: 100%;
   }
   .resizeMain {
     margin-top: 250px;

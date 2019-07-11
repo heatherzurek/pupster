@@ -20,7 +20,9 @@
       <img src="/@Model.Photo" alt="Dog Bio Photo">
       <br>
       <div class="dogInfo">
+      <div class="dogBio">
       @Model.NeedsDescription
+      </div>
       <br><br>
       <span>Age:</span> @Model.Age
       <br>
@@ -34,9 +36,8 @@
       <br>
       <span>Activity Level:</span>
 
-      @Model.Activity Activity Level
-      <br>
-      <br>
+      @Model.Activity <br><br>
+
       <div class="dogCharacteristics">
       @if(@Model.HouseTrained)
       {<h6>✓</h6>}
