@@ -1,4 +1,3 @@
-
 using System;
 using System.Collections.Generic;
 using MySql.Data.MySqlClient;
@@ -19,7 +18,6 @@ namespace Pupster.Models
     {
       List<Dog> allDogs = Dog.GetAll();
       List<int> model = new List<int>{};
-      // int score = 0;
       foreach (Dog dog in allDogs)
       {
         int score = 0;
@@ -77,7 +75,6 @@ namespace Pupster.Models
       return dogInfo;
     }
 
-
     public static void ClearAll()
     {
       MySqlConnection conn = DB.Connection();
@@ -91,7 +88,5 @@ namespace Pupster.Models
         conn.Dispose();
       }
     }
-
-
   }
 }

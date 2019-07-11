@@ -1,4 +1,3 @@
-
 using System;
 using System.Collections.Generic;
 using MySql.Data.MySqlClient;
@@ -81,7 +80,6 @@ namespace Pupster.Models
     {
       return this.Id.GetHashCode();
     }
-
 
     public static List<Dog> GetAll()
     {
@@ -199,7 +197,6 @@ namespace Pupster.Models
       return score;
     }
 
-
     public void Save()
     {
       MySqlConnection conn = DB.Connection();
@@ -295,8 +292,6 @@ namespace Pupster.Models
       }
     }
 
-
-
     public int Score(string question1, string question2, string question3, bool question4, bool question5, bool question6, bool question7, bool question8, string question9, int id)
     {
       int score = 0;
@@ -338,8 +333,6 @@ namespace Pupster.Models
       }
       return score;
     }
-
-
 
    public static Dog Search(string name)
    {
@@ -394,9 +387,6 @@ namespace Pupster.Models
      }
      return foundDog;
    }
-
-
-
 
   }
 }

@@ -1,4 +1,3 @@
-
 html {
   height: 100%;
 }
@@ -95,9 +94,6 @@ header h2 {
   font-size: 7.5rem;
   color: #40481d;
   text-shadow: 1px 1px 1px #000;
-
-
-  /* font-weight: 500; */
 }
 
 .main-1-content h2 {
@@ -107,9 +103,9 @@ header h2 {
 
 /* quiz button positioning */
 .main-quiz {
-  position: absolute;
+  /* position: absolute; */
   left: 0;
-  top: 65%;
+  top: 460px;
   text-align: center;
   width: 100%;
 }
@@ -135,7 +131,6 @@ header h2 {
 
 .box-show {
   text-align: center;
-  /* background-color: rgba(255, 255, 255, 0.75); */
   background-color: #72775b;
   padding: 20px;
   width: 100%;
@@ -164,10 +159,12 @@ header h2 {
 }
 
 .btn {
-  padding-right: 20px;
-  padding-left: 20px;
-  border: #505634;
-  background-color: #505634;
+  padding-right: 18px;
+  padding-left: 18px;
+  border: #0000007d;
+  font-weight: 650;
+  font-size: 15px;
+  background-color: #0000007d;
 }
 
 .btn:hover {
@@ -184,11 +181,6 @@ footer {
 a {
   color: #000000!important;
 }
-/*
-a:hover {
-  color: orange;
-  font-weight: bold;
-} */
 
 label {
   font-weight: bold;
@@ -210,16 +202,13 @@ img {
 .bg-light {
   background-color: #FFFFFF!important;
 }
-
 /* start grid for dogs */
-
 .grid {
   display: grid;
   gap: 1%;
   grid-template-columns: repeat(auto-fill, minmax(300px, 3fr));
   justify-content: center;
   grid-auto-rows: 500px;
-
 }
 
 /* end grid for dogs */
@@ -232,11 +221,7 @@ h1 {
   margin-bottom: 2%;
 }
 
-
-
-
 /* break points for tablets/iphones */
-
 @media only screen and (min-width: 900px){
   .main-1 {
     margin: 0 auto;
@@ -257,8 +242,14 @@ h1 {
   .main-2-content li a {
     margin-left: 25px;
   }
+  .main-1 {
+
+  }
   .main-1 h1 {
     font-size: 60px;
+  }
+  .main-1 h2 {
+    font-size: 25px;
   }
 }
 
@@ -308,7 +299,6 @@ h1 {
   width: 10px;
 }
 
-
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: #888;
@@ -318,8 +308,6 @@ h1 {
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
-
-
 
 /* .showbg {
 background-image: linear-gradient(to right, #69723f, #72775b);} */
