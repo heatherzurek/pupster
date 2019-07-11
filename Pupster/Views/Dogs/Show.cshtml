@@ -17,56 +17,50 @@
   <div class="box-show">
     <h1>About @Model.Name</h1>
     <hr>
-    <div class="showGrid">
-        <div class="column1">
-          <img src="/@Model.Photo" alt="Dog Bio Photo">
-        </div>
+      <img src="/@Model.Photo" alt="Dog Bio Photo">
+      <br>
+      <div class="dogInfo">
+      @Model.NeedsDescription
+      <br><br>
+      <span>Age:</span> @Model.Age
+      <br>
+      <span>Sex:</span> @Model.Sex
+      <br>
+      <span>Breed:</span> @Model.Breed
+      <br>
+      <span>Coloring:</span> @Model.Color
+      <br>
+      <span>Size:</span> @Model.Size
+      <br>
+      <span>Activity Level:</span>
 
-        <div class="column2">
-          @Model.NeedsDescription
-          <br><br>
-          <strong>Age:</strong> @Model.Age
-          <br>
-          <strong>Sex:</strong> @Model.Sex
-          <br>
-          <strong>Breed:</strong> @Model.Breed
-          <br>
-          <strong>Coloring:</strong> @Model.Color
-          <br>
-          <strong>Size:</strong> @Model.Size
-          <br>
-          <strong>Activity Level:</strong> @Model.Activity Activity Level
-        </div>
+      @Model.Activity Activity Level
+      <br>
+      <br>
+      <div class="dogCharacteristics">
+      @if(@Model.HouseTrained)
+      {<h6>✓</h6>}
+      else{<h6>✗</h6>}House Trained
 
-      <div class="bools1">
-        @if(@Model.HouseTrained)
-        {<h6>✓</h6>}
-        else{<h6>✗</h6>}House Trained
+      @if(@Model.NeuteredSpayed)
+      {<h6>✓</h6>}
+      else{<h6>✗</h6>} Neutered or Spayed
+      @if(@Model.Shots){<h6>✓</h6>}
+      else{<h6>✗</h6>} Up to date on shots?
 
-        @if(@Model.NeuteredSpayed)
-        {<h6>✓</h6>}
-        else{<h6>✗</h6>} Neutered or Spayed
-        @if(@Model.Shots){<h6>✓</h6>}
-        else{<h6>✗</h6>} Up to date on shots?
-      </div>
-      <div class="bools2">
+      @if(@Model.GoodWithDogs){<h6>✓</h6>}
+      else{<h6>✗</h6>} Good with Dogs?
 
-        @if(@Model.GoodWithDogs){<h6>✓</h6>}
-        else{<h6>✗</h6>} Good with Dogs?
-        @if(@Model.GoodWithKids){<h6>✓</h6>}
-        else{<h6>✗</h6>}   Good with Kids?
-      </div>
-      <div class="bools3">
+      @if(@Model.GoodWithKids){<h6>✓</h6>}
+      else{<h6>✗</h6>}   Good with Kids?
+      @if(@Model.GoodWithCats){<h6>✓</h6>}
+      else{<h6>✗</h6>}  Good with Cats?
 
-        @if(@Model.GoodWithCats){<h6>✓</h6>}
-        else{<h6>✗</h6>}  Good with Cats?
-
-        @if(@Model.GoodAlone){<h6>✓</h6>}
-        else{<h6>✗</h6>}Good alone?
-      </div>
+      @if(@Model.GoodAlone){<h6>✓</h6>}
+      else{<h6>✗</h6>}Good alone?
       </div>
       <form action="/dogs" method="get">
-        <button type="submit" name="button" class="btn btn-dark">Back to All Dogs</button>
+      <button type="submit" name="button" class="btn btn-dark">Back to All Dogs</button>
       </form>
     </div>
   </div>

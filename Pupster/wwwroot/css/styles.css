@@ -92,7 +92,7 @@ header h2 {
   font-family: 'Major Mono Display', monospace;
   margin-top: 20%;
   font-size: 7.5rem;
-  color: #40481d;
+  color: #003954;
   text-shadow: 1px 1px 1px #000;
 }
 
@@ -105,17 +105,21 @@ header h2 {
 .main-quiz {
   /* position: absolute; */
   left: 0;
+  margin-top: 50px;
   top: 460px;
   text-align: center;
   width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .box-1 {
   text-align: center;
-  background-color: #72775b;
+  background-color: #d5d6cf;
   padding: 20px;
   width: 100%;
-  color: #FFFFFF;
+  color: #000000;
   margin-bottom: 10%;
 }
 
@@ -125,13 +129,13 @@ header h2 {
   background-color: #72775b;
   padding: 20px;
   width: 100%;
-  color: #FFFFFF;
+  color: #000000;
   margin-bottom: 10%;
 }
 
 .box-show {
   text-align: center;
-  background-color: #72775b;
+  background-color: #d5d6cf;
   padding: 20px;
   width: 100%;
   color: #000000;
@@ -159,8 +163,8 @@ header h2 {
 }
 
 .btn {
-  padding-right: 18px;
-  padding-left: 18px;
+  padding-right: 10px;
+  padding-left: 10px;
   border: #0000007d;
   font-weight: 650;
   font-size: 15px;
@@ -188,11 +192,12 @@ label {
 }
 
 img {
-  border-radius: 0em 6em;
+  border-radius: 1em 1em;
+  border: 6px solid #6363632b;
 }
 
 .col-md a {
-  color: #FFFFFF;
+  display: block;
 }
 
 .navbar-brand {
@@ -221,36 +226,13 @@ h1 {
   margin-bottom: 2%;
 }
 
-/* break points for tablets/iphones */
-@media only screen and (min-width: 900px){
-  .main-1 {
-    margin: 0 auto;
-  }
-
-  .main-2-content {
-    width: 50%;
-  }
+.resourcesLink {
+  margin-top: 35px;
 }
 
-@media only screen and (max-width: 700px) {
-  .main-2-content {
-    width: 100%;
-  }
-  li .deleteItem {
-    margin-right: 75px;
-  }
-  .main-2-content li a {
-    margin-left: 25px;
-  }
-  .main-1 {
-
-  }
-  .main-1 h1 {
-    font-size: 60px;
-  }
-  .main-1 h2 {
-    font-size: 25px;
-  }
+.resourcesLink a {
+  font-weight: 800;
+  color: #015279!important;
 }
 
 .showGrid
@@ -308,6 +290,53 @@ h1 {
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+/* break points for tablets/iphones */
+@media only screen and (min-width: 900px){
+  .main-1 {
+    margin: 0 auto;
+  }
 
-/* .showbg {
-background-image: linear-gradient(to right, #69723f, #72775b);} */
+  .main-2-content {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .main-2-content {
+    width: 100%;
+  }
+  li .deleteItem {
+    margin-right: 75px;
+  }
+  .main-2-content li a {
+    margin-left: 25px;
+  }
+  .main-1 {
+
+  }
+  .main-1 h1 {
+    font-size: 60px;
+  }
+  .main-1 h2 {
+    font-size: 25px;
+  }
+  .box-show img {
+    width: 75%;
+    height: 75%;
+    margin-bottom: 25px;
+  }
+  .box-show button {
+    margin-top: 35px;
+  }
+  .box-show span {
+    color: #015279;
+    font-weight: bolder;
+  }
+  .dogInfo {
+    text-align: left;
+  }
+  .resizeMain {
+    margin-top: 250px;
+  }
+
+}
