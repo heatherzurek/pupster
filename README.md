@@ -9,7 +9,6 @@
 ![website view](ss2.png)
 ![website view](ss3.png)
 
-
 ## Setup with importing SQL files
 
 * _Clone this repo to your home machine_
