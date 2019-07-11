@@ -5,9 +5,6 @@
 #### By _**Lindsey Baker, Kaya Jepson, Heather Zurek, Kerriann Walker**_
 
 ![website view](readmeimg1.png)
-![website view](ss1.png)
-![website view](ss2.png)
-![website view](ss3.png)
 
 ## Setup with importing SQL files
 
